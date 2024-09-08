@@ -5,7 +5,7 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <>
-      <ul className="me-auto navbar-nav ms-xl-4">
+      <ul className="mx-auto navbar-nav">
         <li className="nav-item dropdown">
           <a
             className={
