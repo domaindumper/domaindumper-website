@@ -111,7 +111,7 @@ export default function Navbar() {
             </ul>
             <ul className="navbar-nav ms-xl-auto">
               <li className="nav-item dropdown mb-3 mb-lg-0">
-                <a className={router.pathname.startsWith("/more") ? "nav-link dropdown-arrow active" : "nav-link dropdown-arrow"} href="#" data-bs-toggle="dropdown">Pages
+                <a className={router.pathname.startsWith("/more") ? "nav-link dropdown-arrow active" : "nav-link dropdown-arrow"} href="#" data-bs-toggle="dropdown">Account
                   {/* Dropdown Arrow */}
                   <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
                     expand_more
@@ -127,17 +127,8 @@ export default function Navbar() {
                 <Link href="/auth/forgot-password" className="dropdown-item">Forget password</Link>
                  </div>
               </li>
-              <li className="nav-item mb-3 mb-lg-0">
-                <Link className="btn btn-warning btn-sm hover-lift" href="/demo-request">
-                Request Demo
-                <span className="align-middle material-symbols-rounded fs-5 ms-1 d-none d-xl-inline-block">arrow_forward</span>
-               </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href="/auth/signin">
-                Sign In
-                  </Link>
-              </li>
+              
+              
               <ThemeToggler/>
             </ul>
         </>
