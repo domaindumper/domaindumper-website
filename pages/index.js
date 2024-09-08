@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Saasley | Welcome</title>
+        <title>DomainDumper | Welcome</title>
       </Head>
       <section className='position-relative'>
         <div className='container pt-12 pt-lg-15 pb-9 text-center'>

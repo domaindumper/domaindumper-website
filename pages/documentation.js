@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Saasley | Docs</title>
+                <title>DomainDumper | Docs</title>
             </Head>
             <section className='position-relative bg-gradient-light'>
                 <div className='container pt-11 pt-lg-15 pb-9 pb-lg-11'>

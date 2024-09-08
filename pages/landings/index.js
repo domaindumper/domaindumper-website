@@ -19,7 +19,7 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Saasley | Home</title>
+        <title>DomainDumper | Home</title>
       </Head>
       <HeroDefault />
       <section className='position-relative'>

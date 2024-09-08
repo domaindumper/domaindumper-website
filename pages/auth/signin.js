@@ -7,7 +7,7 @@ export default function AuthSignIn() {
     return (
         <>
          <Head>
-        <title>Saasley | SignIn</title>
+        <title>DomainDumper | SignIn</title>
       </Head>
         <div className="container pt-12 pt-lg-15 pb-9 pb-lg-11">
         <div className="row justify-content-center">

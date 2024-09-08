@@ -16,7 +16,7 @@ export default function PagePricing() {
   return (
     <>
       <Head>
-        <title>Saasley | Pricing</title>
+        <title>DomainDumper | Pricing</title>
       </Head>
       <PageHeaderDefault pageTitle="Everything you need for best in class service" breadcrumbActive="pricing" />
       <section className="position-relative border-bottom">

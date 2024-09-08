@@ -7,7 +7,7 @@ export default function AuthForgotPass() {
     return (
         <>
          <Head>
-        <title>Saasley | Forgot Password</title>
+        <title>DomainDumper | Forgot Password</title>
       </Head>
         <div className="container pt-12 pt-lg-15 pb-9 pb-lg-11">
         <div className="row justify-content-center">

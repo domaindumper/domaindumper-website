@@ -7,7 +7,7 @@ export default function AuthSignUp() {
     return (
       <>
       <Head>
-        <title>Saasley | SignUp</title>
+        <title>DomainDumper | SignUp</title>
       </Head>
         <div className="container pt-12 pt-lg-15 pb-9 pb-lg-11">
             <div className="row justify-content-center">
