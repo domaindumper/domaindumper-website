@@ -2,6 +2,11 @@
   "name": "domaindumper-website",
   "version": "2.0",
   "private": true,
+  "author": {
+    "name": "Shiv Singh",
+    "email": "shiv@srapsware.com"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
