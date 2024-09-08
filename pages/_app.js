@@ -8,7 +8,7 @@ export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("%c We have free API that you can use for free From: https://statistics.domaindumper.com/.", "color: #FF0000; font-weight: bold; font-size: 20px;");
+    console.log("%c We have free API that you can use for free From: https://statistics.domaindumper.com/", "color: #FF0000; font-weight: bold; font-size: 20px;");
     window.bootstrap = require("bootstrap/dist/js/bootstrap.bundle.js");
     const bsOffcanvas = new bootstrap.Offcanvas("#offcanvasNavbarDefault");
     Aos.init({
