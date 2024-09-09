@@ -28,7 +28,7 @@ export default function CallToActions() {
                 </div>
             <section className="position-relative bg-body-tertiary">
                 <div className="container py-9 py-lg-11">
-                <CtaVertical action="#" link="See Pricing" heading="Kickstart your landing project with ready-made components" subheading="Join over 25000+ customers worldwide" text="Saasley is a modern website template perfect for marketing your SaaS products. It helps to launch your products fast and grow exponentially."/>
+                <CtaVertical action="#" link="See Pricing" heading="Kickstart your landing project with ready-made components" subheading="Join over 25000+ customers worldwide" text="Domaindumper is a modern website template perfect for marketing your SaaS products. It helps to launch your products fast and grow exponentially."/>
                 </div>
             </section>
         </>

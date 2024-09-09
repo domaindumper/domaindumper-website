@@ -16,7 +16,7 @@ export default function HeroDecorative() {
                 <div className="row pb-9 pb-lg-11 pt-lg-5">
                     <div className="col-lg-11 mx-auto text-center">
                         <h1 className="display-4 mb-5 text-white">Connect to your customers in whole new way with worlds #No1 software</h1>
-                        <p className="mb-5 lead text-white text-opacity-75 mx-auto w-lg-80">Saasley is a modern website template perfect for marketing your SaaS products. It helps to launch your products fast and grow exponentially.</p>
+                        <p className="mb-5 lead text-white text-opacity-75 mx-auto w-lg-80">Domaindumper is a modern website template perfect for marketing your SaaS products. It helps to launch your products fast and grow exponentially.</p>
                         <div className="mb-7 d-flex justify-content-center align-items-center">
                             <Link className="btn btn-primary btn-lg" href="/demo-request">
                                 Try free for 14 days
@@ -25,7 +25,7 @@ export default function HeroDecorative() {
                                 <div>
                                     <VideoPopup videoLink="https://www.youtube.com/watch?v=Ga6RYejo6Hk" />
                                 </div>
-                                <small className="d-none text-white text-opacity-50 d-sm-block ms-sm-2">See Saasley in action</small>
+                                <small className="d-none text-white text-opacity-50 d-sm-block ms-sm-2">See Domaindumper in action</small>
                             </div>
                         </div>
                         <div className="position-relative mx-lg-9 rounded-3 overflow-hidden shadow-lg z-index-1">

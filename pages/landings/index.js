@@ -55,7 +55,7 @@ export default function Index() {
           <div className='row align-items-center'>
             <div className='col-lg-8 mx-auto text-center mb-7'>
               <h2 className='display-5 mb-0' data-aos="fade-up">
-                See what Saasley can do for your organization.
+                See what Domaindumper can do for your organization.
               </h2>
               <div className='bg-primary width-80 my-7 mx-auto pt-1 rounded-pill' data-aos="fade-up" data-aos-delay="100"></div>
             </div>
@@ -104,7 +104,7 @@ export default function Index() {
             <div className='col-xl-8 col-lg-10 mx-auto text-center'>
             <h5 className='mb-4 text-warning'>More benefits</h5>
               <h2 className='display-5 mb-4 mb-lg-5'>
-                Saasley at your fingertips
+                Domaindumper at your fingertips
               </h2>
             </div>
           </div>

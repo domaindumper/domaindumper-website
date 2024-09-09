@@ -15,7 +15,7 @@ export default function HeroDefault() {
                             A software to manage your business
                         </h1>
                         <p className="mb-5 w-lg-75 lead">
-                            Saasley helps to launch your products fast and grow exponentially.
+                            Domaindumper helps to launch your products fast and grow exponentially.
                         </p>
                         <div className="d-flex justify-content-lg-start justify-content-center mb-3">
 
@@ -30,7 +30,7 @@ export default function HeroDefault() {
                             <div>
                                 <VideoPopup videoLink="https://www.youtube.com/watch?v=Ga6RYejo6Hk"/>
                             </div>
-                            <small className="d-none d-sm-block ms-sm-2">See Saasley in action</small>
+                            <small className="d-none d-sm-block ms-sm-2">See Domaindumper in action</small>
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-10 mx-auto mx-lg-0 position-relative">

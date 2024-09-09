@@ -13,20 +13,20 @@ export default function Home() {
                     <div className='row'>
                         <div className='col-md-10 col-lg-9 mx-auto'>
                             <h2 className='text-center display-5 mb-4 text-center'>
-                                Saasley Docs
+                                Domaindumper Docs
                             </h2>
 
                             <ul className='list-group'>
                                 <li className='list-group-item p-4'>
                                     <h5>Introduction:</h5>
                                     <p className='mb-0'>
-                                        Welcome to Saasley landing page. This is a NextJs based minimal landing page specially built for saas web apps landing purpose.
+                                        Welcome to Domaindumper landing page. This is a NextJs based minimal landing page specially built for saas web apps landing purpose.
                                     </p>
                                 </li>
                                 <li className='list-group-item p-4'>
                                     <h5>Prerequisites:</h5>
                                     <p className='mb-0'>
-                                        Make sure you are familiar with the following technologies before purchasing Saasley React / Next.js (Bootstrap 5) Template:
+                                        Make sure you are familiar with the following technologies before purchasing Domaindumper React / Next.js (Bootstrap 5) Template:
                                     </p>
                                     <ol className='list-unstyled mb-4'>
                                         <li className="mb-1">React (required)</li>
@@ -51,7 +51,7 @@ export default function Home() {
                                 <li className='list-group-item p-4'>
                                     <h5>Structure:</h5>
                                     <ul>
-                                        <li>📁 <strong>saasley_react_nextjs_landing_page_v2.0/</strong>
+                                        <li>📁 <strong>Domaindumper_react_nextjs_landing_page_v2.0/</strong>
                                             <ul>
                                                 <li className='mb-2'>Folder contains all template source files.</li>
                                                 <li className='mb-2'>📂 <span className='fw-semibold'>@components</span>

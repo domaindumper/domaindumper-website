@@ -9,7 +9,7 @@ import Layout from "@layouts/LayoutDefault";
 export default function Features() {
     return (
         <>
-        <PageHeaderDefault pageTitle="Features" pageSubtitle="Learn about core features of Saasley."/>
+        <PageHeaderDefault pageTitle="Features" pageSubtitle="Learn about core features of Domaindumper."/>
         <section className="position-relative">
           <div className="container pb-9 pb-lg-11 position-relative mt-n12">
             <FeatureImageLeft1/>

@@ -61,7 +61,7 @@ export default function FooterDefault() {
                             <button type="submit" className="btn btn-cta btn-primary">Subscribe</button>                                 
                             </div>
                         </form>
-                        <small className='text-muted'>© Copyright 2023. Saasley inc. </small>
+                        <small className='text-muted'>© Copyright 2023. Domaindumper inc. </small>
                     </div>
                 </div>
             </div>

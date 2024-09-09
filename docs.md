@@ -1,4 +1,4 @@
-## Saasley - NextJs based Minimal Landing Page
+## Domaindumper - NextJs based Minimal Landing Page
 
 
 ### Documentation file location /pages/documentation.js

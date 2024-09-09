@@ -16,7 +16,7 @@ export default function IndexSignUp() {
     return (
      <>
       <Head>
-          <title>Saasley - Home 2</title>
+          <title>Domaindumper - Home 2</title>
         </Head>
         <HeroSignUp/>
         <section className='position-relative'>
@@ -27,7 +27,7 @@ export default function IndexSignUp() {
                             <div>
                             <VideoPopup videoLink="https://www.youtube.com/watch?v=Ga6RYejo6Hk"/>
                             </div>
-                            <small className="d-none d-sm-block ms-sm-2">See Saasley in action</small>
+                            <small className="d-none d-sm-block ms-sm-2">See Domaindumper in action</small>
                         </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function IndexSignUp() {
           <div className='row mb-7 mb-lg-9 align-items-center'>
             <div className='col-lg-8 mb-4 mb-md-0'>
               <h2 className='display-5 mb-0' data-aos="fade-up">
-                See what Saasley can do for your organization.
+                See what Domaindumper can do for your organization.
               </h2>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function IndexSignUp() {
       </section>
       <section className='position-relative bg-body-tertiary'>
         <div className='container py-9 py-lg-11'>
-          <h2 className='display-5 text-center mb-7 mb-lg-9'>Saasley at your Fingertips</h2>
+          <h2 className='display-5 text-center mb-7 mb-lg-9'>Domaindumper at your Fingertips</h2>
           <div className='row justify-content-around'>
             <div className='col-sm-6 col-lg-4 col-xl-3 mb-6' data-aos="fade-up">
               <FeatureIconWithTitle icon={
