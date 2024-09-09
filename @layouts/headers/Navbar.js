@@ -175,26 +175,14 @@ export default function Navbar() {
             </span>
           </a>
           <div className="dropdown-menu dropdown-menu-end">
-            <Link href="/more/customers" className="dropdown-item">
-              Customers
+            <Link href="/auth/login/" className="dropdown-item">
+              Login
             </Link>
-            <Link href="/more/typography" className="dropdown-item">
-              Typography
-            </Link>
-            <Link href="/404" className="dropdown-item">
-              Custom 404
-            </Link>
-            <Link href="/demo-request" className="dropdown-item">
-              Demo request
-            </Link>
-            <Link href="/auth/signin" className="dropdown-item">
-              Sign In
-            </Link>
-            <Link href="/auth/signup" className="dropdown-item">
-              Sign Up
+            <Link href="/auth/register/" className="dropdown-item">
+              Register
             </Link>
             <Link href="/auth/forgot-password" className="dropdown-item">
-              Forget password
+              Forget password?
             </Link>
           </div>
         </li>
