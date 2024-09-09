@@ -6,34 +6,6 @@ export default function Navbar() {
   return (
     <>
       <ul className="mx-auto navbar-nav">
-        <li className="nav-item dropdown">
-          <a
-            className={
-              router.pathname.startsWith("/landings")
-                ? "nav-link dropdown-arrow active"
-                : "nav-link dropdown-arrow"
-            }
-            href="#"
-            data-bs-toggle="dropdown"
-          >
-            Landings
-            {/* Dropdown Arrow */}
-            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
-              expand_more
-            </span>
-          </a>
-          <div className="dropdown-menu">
-            <Link href="/landings" className="dropdown-item">
-              Default
-            </Link>
-            <Link href="/landings/index-signup" className="dropdown-item">
-              SignUp
-            </Link>
-            <Link href="/landings/index-decorative" className="dropdown-item">
-              Decorative
-            </Link>
-          </div>
-        </li>
         <li className="nav-item dropdown position-static">
           <a
             className={
@@ -44,7 +16,7 @@ export default function Navbar() {
             href="#"
             data-bs-toggle="dropdown"
           >
-            Features
+            Domain
             {/* Dropdown Arrow */}
             <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
               expand_more
@@ -71,69 +43,31 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="col-lg-8 ps-lg-8 border-start-lg">
-                <h6 className="dropdown-header">Components</h6>
+                <h6 className="dropdown-header">More Services</h6>
                 <div className="row">
-                  <div className="col-lg-4 mb-4 mb-lg-0">
+                  <div className="col-lg-6 mb-6 mb-lg-0">
+                    <Link className="dropdown-item" href="/features/collapse">
+                      All registered domains
+                    </Link>
                     <Link className="dropdown-item" href="/features/animations">
-                      Animations
+                      Newly registered domains
                     </Link>
                     <Link className="dropdown-item" href="/features/buttons">
-                      Buttons
+                      Expired domains list
                     </Link>
                     <Link
                       className="dropdown-item"
                       href="/features/call-to-actions"
                     >
-                      Call to actions
-                    </Link>
-                    <Link className="dropdown-item" href="/features/collapse">
-                      Collapse
+                      Deleted domains list
                     </Link>
                   </div>
-                  <div className="col-lg-4 mb-4 mb-lg-0">
+                  <div className="col-lg-6 mb-6 mb-lg-0">
                     <Link className="dropdown-item" href="/features/clients">
-                      Clients
+                      Check domain availability
                     </Link>
                     <Link className="dropdown-item" href="/features/forms">
-                      Forms
-                    </Link>
-                    <Link
-                      className="dropdown-item"
-                      href="/features/feature-images"
-                    >
-                      Feature Images
-                    </Link>
-                    <Link
-                      className="dropdown-item"
-                      href="/features/feature-icons"
-                    >
-                      Icon Cards
-                    </Link>
-                  </div>
-                  <div className="col-lg-4 mb-4 mb-lg-0">
-                    <Link
-                      className="dropdown-item"
-                      href="/features/pricing-tables"
-                    >
-                      Pricing tables
-                    </Link>
-                    <Link
-                      className="dropdown-item"
-                      href="/features/swiper-slider"
-                    >
-                      Swiper Slider
-                    </Link>
-                    <Link
-                      className="dropdown-item"
-                      href="/features/testimonials"
-                    >
-                      Testimonials
-                    </Link>
-                    <Link
-                      className="dropdown-item"
-                      href="/features/tabbed-content"
-                    >
-                      Tabbed-content
+                      AI domain name suggestions
                     </Link>
                   </div>
                 </div>
@@ -141,20 +75,129 @@ export default function Navbar() {
             </div>
           </div>
         </li>
+        <li className="nav-item dropdown">
+          <a
+            className={
+              router.pathname.startsWith("/landings")
+                ? "nav-link dropdown-arrow active"
+                : "nav-link dropdown-arrow"
+            }
+            href="#"
+            data-bs-toggle="dropdown"
+          >
+            Tlds
+            {/* Dropdown Arrow */}
+            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
+              expand_more
+            </span>
+          </a>
+          <div className="dropdown-menu">
+            <Link href="/landings" className="dropdown-item">
+              Tlds From A-Z
+            </Link>
+            <Link href="/landings/index-signup" className="dropdown-item">
+              Tlds Categories
+            </Link>
+          </div>
+        </li>
+        <li className="nav-item dropdown">
+          <a
+            className={
+              router.pathname.startsWith("/landings")
+                ? "nav-link dropdown-arrow active"
+                : "nav-link dropdown-arrow"
+            }
+            href="#"
+            data-bs-toggle="dropdown"
+          >
+            Registrars
+            {/* Dropdown Arrow */}
+            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
+              expand_more
+            </span>
+          </a>
+          <div className="dropdown-menu">
+            <Link href="/landings" className="dropdown-item">
+              All Registrar List
+            </Link>
+            <Link href="/landings/index-signup" className="dropdown-item">
+              TLDs Offered
+            </Link>
+            <Link href="/landings/index-decorative" className="dropdown-item">
+              Cheapest Registration
+            </Link>
+            <Link href="/landings/index-decorative" className="dropdown-item">
+              Best 3 Year Value
+            </Link>
+          </div>
+        </li>
+
         <li className="nav-item">
           <Link href="/pricing" className="nav-link">
             Pricing
           </Link>
         </li>
-        <li className="nav-item">
-          <Link href="/integrations" className="nav-link">
-            integrations
-          </Link>
+        <li className="nav-item dropdown">
+          <a
+            className={
+              router.pathname.startsWith("/landings")
+                ? "nav-link dropdown-arrow active"
+                : "nav-link dropdown-arrow"
+            }
+            href="#"
+            data-bs-toggle="dropdown"
+          >
+            About
+            {/* Dropdown Arrow */}
+            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
+              expand_more
+            </span>
+          </a>
+          <div className="dropdown-menu">
+            <Link href="/landings" className="dropdown-item">
+              Get Start
+            </Link>
+            <Link href="/landings/index-signup" className="dropdown-item">
+              DomainDumper
+            </Link>
+            <Link href="/landings/index-decorative" className="dropdown-item">
+              What we do?
+            </Link>
+          </div>
         </li>
-        <li className="nav-item">
-          <Link href="/blog" className="nav-link">
-            Blog
-          </Link>
+        <li className="nav-item dropdown">
+          <a
+            className={
+              router.pathname.startsWith("/landings")
+                ? "nav-link dropdown-arrow active"
+                : "nav-link dropdown-arrow"
+            }
+            href="#"
+            data-bs-toggle="dropdown"
+          >
+            Support
+            {/* Dropdown Arrow */}
+            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
+              expand_more
+            </span>
+          </a>
+          <div className="dropdown-menu">
+            <Link href="/landings" className="dropdown-item">
+              Open Support Tickets
+            </Link>
+            <Link href="/landings/index-signup" className="dropdown-item">
+              API Documents
+            </Link>
+            <Link href="/landings/index-decorative" className="dropdown-item">
+              Knowledgebase
+            </Link>
+            <Link href="/landings/index-decorative" className="dropdown-item">
+              Payment methods
+            </Link>
+            <Link href="/landings/index-decorative" className="dropdown-item">
+              Contact us
+            </Link>
+          </div>
         </li>
       </ul>
       <ul className="navbar-nav ms-xl-auto">
