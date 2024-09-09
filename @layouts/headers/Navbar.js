@@ -43,7 +43,7 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="col-lg-8 ps-lg-8 border-start-lg">
-                <h6 className="dropdown-header">More Services</h6>
+                <h6 className="dropdown-header">Domain's All Services</h6>
                 <div className="row">
                   <div className="col-lg-6 mb-6 mb-lg-0">
                     <Link className="dropdown-item" href="/features/collapse">
