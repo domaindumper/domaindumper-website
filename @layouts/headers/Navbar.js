@@ -34,7 +34,7 @@ export default function Navbar() {
                       </span>
                     </div>
                     <div className="flex-grow-1">
-                      <h6 className="mb-1">Overview</h6>
+                      <h6 className="mb-1">Domain Data</h6>
                       <small className="opacity-75 lh-sm">
                         Full list of features
                       </small>
