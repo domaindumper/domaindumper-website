@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 export const footerLogo = "/img/logo-white.svg";
 export default function FooterDefault() {
+    const currentYear = new Date().getFullYear();
   return (
     <footer
       className="footer bg-dark text-white position-relative overflow-hidden"
@@ -29,7 +30,7 @@ export default function FooterDefault() {
           <div className="col-md-3 mx-auto col-lg-2 mb-5">
             <ul className="nav flex-column">
               <li>
-                <a href="#" className="nav-link p-0">
+                <a href="#" className="nav-link p-0 mb-3">
                   Price
                 </a>
               </li>
@@ -44,7 +45,7 @@ export default function FooterDefault() {
                 </a>
               </li>
               <li>
-                <a href="#" className="nav-link p-0 mb-3">
+                <a href="#" className="nav-link p-0">
                   Registrar Data
                 </a>
               </li>
@@ -160,7 +161,7 @@ export default function FooterDefault() {
               </div>
             </form>
             <small className="text-muted">
-              © Copyright 2023. Domaindumper inc.{" "}
+              © Copyright 2016-{currentYear}. Domaindumper. All rights
             </small>
           </div>
         </div>
