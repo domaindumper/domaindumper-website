@@ -1,120 +1,210 @@
 import Head from 'next/head'
 import 'material-symbols'
 import Link from 'next/link'
+import FeatureIconDefault from '@components/features/feature-icons/FeatureIconDefault'
+import HeroDefault from '@components/hero-sliders/HeroDefault'
 import Layout from '@layouts/LayoutDefault'
-import Image from 'next/legacy/image'
-import FeatureIconTiny from '@components/features/feature-icons/FeatureIconTiny'
-export const Demo1 = '/img/shots/demo1.png'
-export const Demo2 = '/img/shots/demo2.png'
-export const Demo3 = '/img/shots/demo3.png'
-export default function Home() {
+import FeatureImageLeft1 from '@components/features/feature-image/FeatureImageLeft1'
+import FeatureImageRight1 from '@components/features/feature-image/FeatureImageRight1'
+import FeatureImageLeft2 from '@components/features/feature-image/FeatureImageLeft2'
+import CtaBoxed from '@components/call-to-actions/CtaBoxed'
+import IntegrationDefault from '@components/integrations/IntegrationDefault'
+import FeatureIconLeft from '@components/features/feature-icons/FeatureIconLeft'
+export const airbnb = '/img/partners/airbnb-white.svg';
+export const airbnbAvatar = '/img/avatars/male/1.jpg';
+import FeatureIconVertical from '@components/features/feature-icons/FeatureIconVertical'
+import TestimonialBoxed from '@components/testimonials/TestimonialBoxed'
+import PricingDefault from '@components/pricing-tables/PricingDefault'
+export default function Index() {
   return (
     <>
       <Head>
-        <title>DomainDumper | Welcome</title>
+        <title>DomainDumper | Home</title>
       </Head>
+      <HeroDefault />
       <section className='position-relative'>
-        <div className='container pt-12 pt-lg-15 pb-9 text-center'>
-          <div className='row mb-7 mb-lg-9'>
-            <div className='col-md-10 col-lg-9 mx-auto text-center'>
-              <h5 className='mb-4'>Light & Dark Modes</h5>
-              <h2 className='text-center text-capitalize display-4 mb-0'>
-                Landing page template based on NextJs and Bootstrap5
+        <div className='container py-9 py-lg-11'>
+          <div className='row'>
+            <div className='col-md-4 mb-6 mb-md-0' data-aos="fade-up">
+              <FeatureIconDefault icon={
+                <span className="material-symbols-rounded align-middle fs-1">
+                  insights
+                </span>
+              } color="primary" title="Analytics" description="Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor dolore magna aliqua enim ad minim veniam." />
+            </div>
+            <div className='col-md-4 mb-6 mb-md-0' data-aos="fade-up" data-aos-delay="100">
+              <FeatureIconDefault icon={
+                <span className="material-symbols-rounded align-middle fs-1">
+                  smart_toy
+                </span>
+              } color="success" title="Automation" description="Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor dolore magna aliqua enim ad minim veniam." />
+            </div>
+            <div className='col-md-4' data-aos="fade-up" data-aos-delay="200">
+              <FeatureIconDefault icon={
+                <span className="material-symbols-rounded align-middle fs-1">
+                  workspaces
+                </span>
+              } color="warning" title="Collaboration" description="Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor dolore magna aliqua enim ad minim veniam." />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='position-relative border-top'>
+        <div className='container pt-9 pt-lg-11'>
+          <div className='row align-items-center'>
+            <div className='col-lg-8 mx-auto text-center mb-7'>
+              <h2 className='display-5 mb-0' data-aos="fade-up">
+                See what Domaindumper can do for your organization.
+              </h2>
+              <div className='bg-primary width-80 my-7 mx-auto pt-1 rounded-pill' data-aos="fade-up" data-aos-delay="100"></div>
+            </div>
+          </div>
+          <div className='pb-9 pb-lg-11 border-bottom'>
+            <div className='row'>
+              <div className='col-xl-10 mx-auto'>
+              <FeatureImageLeft1 />
+              </div>
+            </div>
+            <div className='row justify-content-around' data-aos="zoom-in-down">
+              <div className='col-md-5 col-xl-4 mt-7 mt-lg-11'>
+                <FeatureIconVertical icon={<span className="material-symbols-rounded fs-2 align-middle">commit </span>}
+                  color="primary" title="Proven Performance" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo." />
+              </div>
+              <div className='col-md-5 col-xl-4 mt-7 mt-lg-11' data-aos="zoom-in-down" data-aos-delay="100">
+                <FeatureIconVertical icon={<span className="material-symbols-rounded fs-2 align-middle">commit </span>}
+                  color="warning" title="Unparalleled Track Record" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='position-relative'>
+        <div className='container py-9 py-lg-11 position-relative'>
+          <FeatureImageRight1 />
+        </div>
+      </section>
+      <section>
+        <div className='container'>
+          <TestimonialBoxed classes="bg-primary rounded-4 shadow-lg text-white py-7 px-4" userpost="Marketing manager" username="John Doe" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”" brandLogo={airbnb} profilePic={airbnbAvatar} />
+        </div>
+      </section>
+      <section className='position-relative'>
+        <div className='container py-9 py-lg-11 position-relative'>
+          <FeatureImageLeft2 />
+        </div>
+      </section>
+      <section className='position-relative overflow-hidden bg-dark text-white'>
+          {/**Page header shape background */}
+<svg className="position-absolute start-0 bottom-0 w-100 fill-body-bg" height="48" preserveAspectRatio="none" viewBox="0 0 1200 145" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path fillRule="evenodd" clipRule="evenodd" d="M0 0L50 16.9167C100 33.8333 200 67.6667 300 77.3333C400 87 500 72.5 600 62.8333C700 53.1667 800 48.3333 900 55.5833C1000 62.8333 1100 82.1667 1150 91.8333L1200 101.5V145H1150C1100 145 1000 145 900 145C800 145 700 145 600 145C500 145 400 145 300 145C200 145 100 145 50 145H0V0Z"/>
+</svg>
+        <div className='container py-9 py-lg-11 position-relative z-index-1'>
+          <div className='row'>
+            <div className='col-xl-8 col-lg-10 mx-auto text-center'>
+            <h5 className='mb-4 text-warning'>More benefits</h5>
+              <h2 className='display-5 mb-4 mb-lg-5'>
+                Domaindumper at your fingertips
               </h2>
             </div>
           </div>
-          <h5 className='text-center mb-4 text-muted'>Choose a demo</h5>
-          <div className='row mb-4 align-items-center justify-content-center'>
-            <div className='col-md-4 mb-6'>
-              <Link href="/landings" className='d-block shadow hover-lift overflow-hidden rounded-2 mb-4'>
-                <Image priority layout='responsive' src={Demo1} width="768" height="600" alt="" />
-               
-              </Link>
-              <h5 className='mb-0'>Default</h5>
+          <div className='row pb-6'>
+            <div className='col-md-6 mt-4'>
+              <div className='bg-white bg-opacity-10 rounded-4 p-4' data-aos="fade-up">
+                <FeatureIconLeft icon={
+                  <span className="material-symbols-rounded align-middle fs-1">
+                    insights
+                  </span>
+                } color="info" title="Analytics" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " />
+              </div>
             </div>
-            <div className='col-md-4 mb-6'>
-              <Link className='d-block shadow hover-lift overflow-hidden rounded-2 mb-4' href="/landings/index-signup">
-                 <Image priority layout='responsive' src={Demo2} width="768" height="600" alt="" />
-                
-              </Link>
-              <h5 className='mb-0'>SignUp</h5>
+            <div className='col-md-6 mt-4'>
+              <div className='bg-white bg-opacity-10 rounded-4 p-4' data-aos="fade-up">
+                <FeatureIconLeft icon={
+                  <span className="material-symbols-rounded align-middle fs-1">
+                    workspaces
+                  </span>
+                } color="warning" title="Collaboration" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " />
+              </div>
             </div>
-            <div className='col-md-4 mb-6'>
-              <Link href="/landings/index-decorative" className='d-block shadow hover-lift overflow-hidden rounded-2 mb-4'>
-               <Image priority layout='responsive' src={Demo3} width="768" height="600" alt="" />
+            <div className='col-md-6 mt-4'>
+              <div className='bg-white bg-opacity-10 rounded-4 p-4' data-aos="fade-up">
+                <FeatureIconLeft icon={
+                  <span className="material-symbols-rounded align-middle fs-1">
+                    smart_toy
+                  </span>
+                } color="primary" title="Automation" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " />
+              </div>
+            </div>
+            <div className='col-md-6 mt-4'>
+              <div className='bg-white bg-opacity-10 rounded-4 p-4' data-aos="fade-up">
+                <FeatureIconLeft icon={
+                  <span className="material-symbols-rounded align-middle fs-1">
+                    verified_user
+                  </span>
+                } color="success" title="Secure & Reliable" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " />
+              </div>
+            </div>
+            <div className='col-md-6 mt-4'>
+              <div className='bg-white bg-opacity-10 rounded-4 p-4' data-aos="fade-up">
+                <FeatureIconLeft icon={
+                  <span className="material-symbols-rounded align-middle fs-1">
+                    credit_score
+                  </span>
+                } color="danger" title="Affordable" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " />
+              </div>
+            </div>
+            <div className='col-md-6 mt-4'>
+              <div className='bg-white bg-opacity-10 rounded-4 p-4' data-aos="fade-up">
+                <FeatureIconLeft icon={
+                  <span className="material-symbols-rounded align-middle fs-1">
+                    contact_support
+                  </span>
+                } color="light" title="24/7 Support" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='position-relative overflow-hidden'>
+        <div className='position-absolute start-0 bottom-0 w-100 h-50 bg-body-tertiary'></div>
+        <div className='container py-9 py-lg-11 position-relative'>
+          <div className='row mb-5 mb-lg-7'>
+            <div className='col-lg-8 mx-auto text-center'>
+              <h5 className='mb-4'>Pay as you go</h5>
+              <h2 className='display-5 mb-0'>
+              Simple pricing plan for you
+              </h2>
+            </div>
+          </div>
 
-              </Link>
-              <h5 className='mb-0'>Decorative</h5>
-            </div>
+          <div className='row mb-7'>
+            <PricingDefault />
           </div>
-          <div className='alert bg-body shadow-lg text-reset d-flex flex-column justify-content-center align-items-center w-lg-85 mx-auto alert-info text-start p-4 border-0'>
-            <div className='flex-grow-1 text-center'>
-            <h4 className='mb-3'>Looking for HTML version?</h4>
-            <p className='mb-4'>We got you! Both React NextJs and HTML versions are included with single price.</p>
-            </div>
-            <div className='flex-shrink-0'>
-            <a href="https://uigator.com/themeforest/Domaindumper_2.0/index.html" target="_blank" className="btn btn-outline-primary d-inline-flex justify-content-center align-items-center" rel="noreferrer">
-                                <svg className="me-2" width="25" height="29" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.46733 25.6355L0.233704 0.581055H24.7663L22.5299 25.6375L12.494 28.4196L2.46733 25.6355Z" fill="#E34E26"></path>
-                                    <path d="M12.5 2.62891V26.2913L20.6153 24.0418L22.5272 2.62891H12.5Z" fill="#EF662A"></path>
-                                    <path d="M4.80371 5.70215L5.632 14.9947H16.2827L15.9253 18.9804L12.496 19.9076L9.0732 18.9818L8.84436 16.4226H5.75986L6.20093 21.356L12.4953 23.1041L18.7975 21.356L19.6425 11.9222H8.44251L8.16129 8.77533H19.9116H19.9209L20.1962 5.70215H4.80371Z" fill="white"></path>
-                                    <path d="M12.5 5.70215H4.80371L5.632 14.9947H12.5V11.9222H8.44251L8.16129 8.77533H12.5V5.70215Z" fill="#EBEBEB"></path>
-                                    <path d="M12.5 19.9065L12.496 19.9079L9.07323 18.9821L8.84439 16.4229H5.75989L6.20096 21.3563L12.4953 23.1044L12.5 23.1031V19.9065Z" fill="#EBEBEB"></path>
-                                    </svg>
-                                    
-                                HTML Demo <span className="material-symbols-rounded align-middle ms-2">open_in_new</span></a>
-            </div>
+          <div className='text-center'>
+            <Link href="/pricing">
+              Learn More about Pricing <span className='material-symbols-rounded align-middle ms-1'>arrow_forward</span>
+            </Link>
           </div>
-          <div className="d-flex pt-7 pt-lg-9 flex-wrap align-items-center justify-content-center">
-            <div className="ps-3 pe-4 me-2 mb-2 py-2 bg-body-tertiary rounded-pill">
-              <FeatureIconTiny icon={
-                <span className="material-symbols-rounded align-middle fs-3">
-                  check
-                </span>
-              } color="primary" text="35+ Flexible Components" />
-            </div>
-            <div className="ps-3 pe-4 me-2 mb-2 py-2 bg-body-tertiary rounded-pill">
-              <FeatureIconTiny icon={
-                <span className="material-symbols-rounded align-middle fs-3">
-                  check
-                </span>
-              } color="primary" text="Modern & Trendy Designs" />
-            </div>
-            <div className="ps-3 pe-4 me-2 mb-2 py-2 bg-body-tertiary rounded-pill">
-              <FeatureIconTiny icon={
-                <span className="material-symbols-rounded align-middle fs-3">
-                  check
-                </span>
-              } color="primary" text="Bootstrap 5.2 and Next" />
-            </div>
-            <div className="ps-3 pe-4 me-2 mb-2 py-2 bg-body-tertiary rounded-pill">
-              <FeatureIconTiny icon={
-                <span className="material-symbols-rounded align-middle fs-3">
-                  check
-                </span>
-              } color="primary" text="Clean & Well Coded" />
-            </div>
-            <div className="ps-3 pe-4 me-2 mb-2 py-2 bg-body-tertiary rounded-pill">
-              <FeatureIconTiny icon={
-                <span className="material-symbols-rounded align-middle fs-3">
-                  check
-                </span>
-              } color="primary" text="Free Regular Updates" />
-            </div>
-            <div className="ps-3 pe-4 me-2 mb-2 py-2 bg-body-tertiary rounded-pill">
-              <FeatureIconTiny icon={
-                <span className="material-symbols-rounded align-middle fs-3">
-                  check
-                </span>
-              } color="primary" text="Free and Instant Support" />
-            </div>
+        </div>
+      </section>
+      <section className='position-relative'>
+        <div className='container py-9 py-lg-11'>
+          <div className='row'>
+            <IntegrationDefault />
           </div>
+        </div>
+      </section>
+      <section className="position-relative">
+        <div className='bg-dark w-100 h-50 bottom-0 start-0 position-absolute'></div>
+        <div className="container position-relative">
+          <CtaBoxed link="Request Demo" action="#" color="secondary" heading="A complete solution for you and your client's needs" subheading="Join 250,000 Customers Today" />
         </div>
       </section>
     </>
   )
 }
-Home.getLayout = function getLayout(page) {
+Index.getLayout = function getLayout(page) {
   return (
     <Layout>
       {page}
