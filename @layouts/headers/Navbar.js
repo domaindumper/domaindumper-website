@@ -26,7 +26,7 @@ export default function Navbar() {
             <div className="row">
               <div className="col-lg-3 me-lg-auto">
                 <h6 className="dropdown-header">Overview</h6>
-                <Link className="dropdown-item py-3 mb-3" href="/domain/">
+                <Link className="dropdown-item py-3 mb-3" href="/domains/">
                   <div className="d-flex align-items-center">
                     <div className="flex-shrink-0 shadow-sm size-40 d-flex align-items-center justify-content-center me-3 rounded-circle bg-white">
                       <span className="material-symbols-outlined align-middle fs-4 lh-1 text-secondary">

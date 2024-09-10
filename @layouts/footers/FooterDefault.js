@@ -29,24 +29,24 @@ export default function FooterDefault() {
           <div className="col-md-3 mx-auto col-lg-2 mb-5">
             <ul className="nav flex-column">
               <li>
-                <a href="#" className="nav-link p-0 mb-3">
+                <Link href="/pricing/" className="nav-link p-0 mb-3">
                   Price
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-link p-0 mb-3">
+                <Link href="/domains/" className="nav-link p-0 mb-3">
                   Domain Database
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-link p-0 mb-3">
+                <Link href="/tlds/" className="nav-link p-0 mb-3">
                   TLD and gTLD
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-link p-0">
+                <Link href="/registrars/" className="nav-link p-0">
                   Registrar Data
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
