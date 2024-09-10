@@ -4,11 +4,16 @@ import NProgress from "nprogress";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "../styles/globals.scss";
+import { SiteProvider } from "@lib/siteContext";
+
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("%c If you're playing Mario with our data, we've got a free warp pipe for you! Skip the scraping and head over to our free API at: https://statistics.domaindumper.com/", "color: #FF0000; font-weight: bold; font-size: 14px;");
+    console.log(
+      "%c If you're playing Mario with our data, we've got a free warp pipe for you! Skip the scraping and head over to our free API at: https://statistics.domaindumper.com/",
+      "color: #FF0000; font-weight: bold; font-size: 14px;"
+    );
     window.bootstrap = require("bootstrap/dist/js/bootstrap.bundle.js");
     const bsOffcanvas = new bootstrap.Offcanvas("#offcanvasNavbarDefault");
     Aos.init({
@@ -38,5 +43,9 @@ export default function MyApp({ Component, pageProps }) {
   }, [router]);
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page);
-  return getLayout(<Component {...pageProps} />);
+  return getLayout(
+    <SiteProvider>
+      <Component {...pageProps} />
+    </SiteProvider>
+  );
 }

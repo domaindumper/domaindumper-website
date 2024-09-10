@@ -160,7 +160,7 @@ export default function FooterDefault() {
               </div>
             </form>
             <small className="text-muted">
-              © Copyright 2016-{currentYear}. Domaindumper. All rights
+              © Copyright 2016-{currentYear} Domaindumper. All rights
             </small>
           </div>
         </div>

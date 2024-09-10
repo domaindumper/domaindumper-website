@@ -15,11 +15,15 @@ export const airbnbAvatar = '/img/avatars/male/1.jpg';
 import FeatureIconVertical from '@components/features/feature-icons/FeatureIconVertical'
 import TestimonialBoxed from '@components/testimonials/TestimonialBoxed'
 import PricingDefault from '@components/pricing-tables/PricingDefault'
+import { useContext } from 'react';
+import SiteContext from '@lib/siteContext';
+
 export default function Index() {
+  const { siteInfo } = useContext(SiteContext);
   return (
     <>
       <Head>
-        <title>DomainDumper | Home</title>
+        <title>{siteInfo.title} | Home</title>
       </Head>
       <HeroDefault />
       <section className='position-relative'>
