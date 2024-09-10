@@ -15,7 +15,7 @@ export default function Features() {
   return (
     <>
       <Head>
-        <title>{siteInfo.title} | Home</title>
+        <title>{siteInfo.title} | TLDs and gTLD</title>
       </Head>
       <PageHeaderDefault
         pageTitle="Features"
