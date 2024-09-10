@@ -13,7 +13,7 @@ export default function Navbar() {
                 ? "nav-link dropdown-arrow active"
                 : "nav-link dropdown-arrow"
             }
-            href="#"
+            href="/domains/"
             data-bs-toggle="dropdown"
           >
             Domain
@@ -46,27 +46,27 @@ export default function Navbar() {
                 <h6 className="dropdown-header">Domain's All Services</h6>
                 <div className="row">
                   <div className="col-lg-6 mb-6 mb-lg-0">
-                    <Link className="dropdown-item" href="/features/collapse">
+                    <Link className="dropdown-item" href="/domains/">
                       All registered domains
                     </Link>
-                    <Link className="dropdown-item" href="/features/animations">
+                    <Link className="dropdown-item" href="/domains/">
                       Newly registered domains
                     </Link>
-                    <Link className="dropdown-item" href="/features/buttons">
+                    <Link className="dropdown-item" href="/domains/">
                       Expired domains list
                     </Link>
                     <Link
                       className="dropdown-item"
-                      href="/features/call-to-actions"
+                      href="/domains/"
                     >
                       Deleted domains list
                     </Link>
                   </div>
                   <div className="col-lg-6 mb-6 mb-lg-0">
-                    <Link className="dropdown-item" href="/features/clients">
+                    <Link className="dropdown-item" href="/domains/">
                       Check domain availability
                     </Link>
-                    <Link className="dropdown-item" href="/features/forms">
+                    <Link className="dropdown-item" href="/domains/">
                       AI domain name suggestions
                     </Link>
                   </div>
@@ -78,11 +78,11 @@ export default function Navbar() {
         <li className="nav-item dropdown">
           <a
             className={
-              router.pathname.startsWith("/landings")
+              router.pathname.startsWith("/tlds")
                 ? "nav-link dropdown-arrow active"
                 : "nav-link dropdown-arrow"
             }
-            href="#"
+            href="/tlds/"
             data-bs-toggle="dropdown"
           >
             Tlds
@@ -92,10 +92,10 @@ export default function Navbar() {
             </span>
           </a>
           <div className="dropdown-menu">
-            <Link href="/landings" className="dropdown-item">
+            <Link href="/tlds/tlds-from-a-z/" className="dropdown-item">
               Tlds From A-Z
             </Link>
-            <Link href="/landings/index-signup" className="dropdown-item">
+            <Link href="/tlds/tlds-categories/" className="dropdown-item">
               Tlds Categories
             </Link>
           </div>
@@ -103,11 +103,11 @@ export default function Navbar() {
         <li className="nav-item dropdown">
           <a
             className={
-              router.pathname.startsWith("/landings")
+              router.pathname.startsWith("/registrars")
                 ? "nav-link dropdown-arrow active"
                 : "nav-link dropdown-arrow"
             }
-            href="#"
+            href="/registrars/"
             data-bs-toggle="dropdown"
           >
             Registrars
@@ -117,34 +117,34 @@ export default function Navbar() {
             </span>
           </a>
           <div className="dropdown-menu">
-            <Link href="/landings" className="dropdown-item">
-              All Registrar List
+            <Link href="/registrars/all-domains-registrars/" className="dropdown-item">
+              All domains registrars
             </Link>
-            <Link href="/landings/index-signup" className="dropdown-item">
+            <Link href="/registrars/tlds-offered/" className="dropdown-item">
               TLDs Offered
             </Link>
-            <Link href="/landings/index-decorative" className="dropdown-item">
-              Cheapest Registration
+            <Link href="/registrars/cheapest-domain-registration/" className="dropdown-item">
+              Cheapest domain registration
             </Link>
-            <Link href="/landings/index-decorative" className="dropdown-item">
+            <Link href="/registrars/best-3-year-value/" className="dropdown-item">
               Best 3 Year Value
             </Link>
           </div>
         </li>
 
         <li className="nav-item">
-          <Link href="/pricing" className="nav-link">
+          <Link href="/pricing/" className="nav-link">
             Pricing
           </Link>
         </li>
         <li className="nav-item dropdown">
           <a
             className={
-              router.pathname.startsWith("/landings")
+              router.pathname.startsWith("/about")
                 ? "nav-link dropdown-arrow active"
                 : "nav-link dropdown-arrow"
             }
-            href="#"
+            href="/about/"
             data-bs-toggle="dropdown"
           >
             About
@@ -154,13 +154,13 @@ export default function Navbar() {
             </span>
           </a>
           <div className="dropdown-menu">
-            <Link href="/landings" className="dropdown-item">
+            <Link href="/about/get-start/" className="dropdown-item">
               Get Start
             </Link>
-            <Link href="/landings/index-signup" className="dropdown-item">
+            <Link href="/about/domain-dumper/" className="dropdown-item">
               DomainDumper
             </Link>
-            <Link href="/landings/index-decorative" className="dropdown-item">
+            <Link href="/about/what-we-do/" className="dropdown-item">
               What we do?
             </Link>
           </div>
@@ -168,11 +168,11 @@ export default function Navbar() {
         <li className="nav-item dropdown">
           <a
             className={
-              router.pathname.startsWith("/landings")
+              router.pathname.startsWith("/support")
                 ? "nav-link dropdown-arrow active"
                 : "nav-link dropdown-arrow"
             }
-            href="#"
+            href="/support/"
             data-bs-toggle="dropdown"
           >
             Support
@@ -182,19 +182,19 @@ export default function Navbar() {
             </span>
           </a>
           <div className="dropdown-menu">
-            <Link href="/landings" className="dropdown-item">
+            <Link href="/support/open-support-tickets/" className="dropdown-item">
               Open Support Tickets
             </Link>
-            <Link href="/landings/index-signup" className="dropdown-item">
+            <Link href="/support/api-documents/" className="dropdown-item">
               API Documents
             </Link>
-            <Link href="/landings/index-decorative" className="dropdown-item">
+            <Link href="/support/knowledgebase/" className="dropdown-item">
               Knowledgebase
             </Link>
-            <Link href="/landings/index-decorative" className="dropdown-item">
+            <Link href="/support/payment-methods" className="dropdown-item">
               Payment methods
             </Link>
-            <Link href="/landings/index-decorative" className="dropdown-item">
+            <Link href="/support/contact-us/" className="dropdown-item">
               Contact us
             </Link>
           </div>
