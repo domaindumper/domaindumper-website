@@ -23,8 +23,7 @@ export default function FooterDefault() {
               </Link>
             </div>
             <p className="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              pellentesque efficitur turpis, vitae dictum dolor tristique in.
+            Your go-to for finding and buying the perfect domain name at the best price. We offer free API access for all our domain services.
             </p>
           </div>
           <div className="col-md-3 mx-auto col-lg-2 mb-5">
