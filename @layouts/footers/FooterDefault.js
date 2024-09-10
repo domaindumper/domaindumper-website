@@ -30,7 +30,7 @@ export default function FooterDefault() {
             <ul className="nav flex-column">
               <li>
                 <Link href="/pricing/" className="nav-link p-0 mb-3">
-                  Price
+                Pricing
                 </Link>
               </li>
               <li>
