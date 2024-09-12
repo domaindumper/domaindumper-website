@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import ThemeToggler from "./ThemeToggler";
+
+import { useContext, useEffect, useState } from 'react';
+
+
+
 export default function Navbar() {
+ // const { isLoggedIn, user, isLoading } = useAuth();
   const router = useRouter();
   return (
     <>
@@ -55,10 +61,7 @@ export default function Navbar() {
                     <Link className="dropdown-item" href="/domains/">
                       Expired domains list
                     </Link>
-                    <Link
-                      className="dropdown-item"
-                      href="/domains/"
-                    >
+                    <Link className="dropdown-item" href="/domains/">
                       Deleted domains list
                     </Link>
                   </div>
@@ -117,16 +120,25 @@ export default function Navbar() {
             </span>
           </a>
           <div className="dropdown-menu">
-            <Link href="/registrars/all-domains-registrars/" className="dropdown-item">
+            <Link
+              href="/registrars/all-domains-registrars/"
+              className="dropdown-item"
+            >
               All domains registrars
             </Link>
             <Link href="/registrars/tlds-offered/" className="dropdown-item">
               TLDs Offered
             </Link>
-            <Link href="/registrars/cheapest-domain-registration/" className="dropdown-item">
+            <Link
+              href="/registrars/cheapest-domain-registration/"
+              className="dropdown-item"
+            >
               Cheapest domain registration
             </Link>
-            <Link href="/registrars/best-3-year-value/" className="dropdown-item">
+            <Link
+              href="/registrars/best-3-year-value/"
+              className="dropdown-item"
+            >
               Best 3 Year Value
             </Link>
           </div>
@@ -182,7 +194,10 @@ export default function Navbar() {
             </span>
           </a>
           <div className="dropdown-menu">
-            <Link href="/support/open-support-tickets/" className="dropdown-item">
+            <Link
+              href="/support/open-support-tickets/"
+              className="dropdown-item"
+            >
               Open Support Tickets
             </Link>
             <Link href="/support/api-documents/" className="dropdown-item">

@@ -17,17 +17,13 @@ import TestimonialBoxed from '@components/testimonials/TestimonialBoxed'
 import PricingDefault from '@components/pricing-tables/PricingDefault'
 import { useContext } from 'react';
 import SiteContext from '@lib/siteContext';
-import AuthContext from '@lib/Auth/AuthContext';
 
 export default function Index() {
   const { siteInfo } = useContext(SiteContext);
-  const { isLoggedIn, user } = useContext(AuthContext);
-
-  console.log(user);
   return (
     <>
       <Head>
-        <title>{siteInfo.title} | Home </title>
+        <title>{siteInfo.title} | Home</title>
       </Head>
       <HeroDefault />
       <section className='position-relative'>
