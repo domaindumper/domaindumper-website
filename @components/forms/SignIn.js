@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "material-symbols";
 import Link from "next/link";
 import axios from "axios";
+import { API_END } from "@lib/api";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 export default function FormSignIn() {
@@ -23,24 +24,18 @@ export default function FormSignIn() {
   };
 
   useEffect(() => {
-
-    if (token)
-      console.log(`hCaptcha Token: ${token}`);
-
+    if (token) console.log(`hCaptcha Token: ${token}`);
   }, [token]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "https://identity.domaindumper.com/api/v2/user/login/",
-        {
-          email,
-          password,
-          token,
-        }
-      );
+      const response = await axios.post(API_END + "/user/login/", {
+        email,
+        password,
+        token,
+      });
 
       //console.log(response.data);
 
@@ -111,12 +106,12 @@ export default function FormSignIn() {
         </div>
       </div>
       <div className="mb-3">
-      <HCaptcha
-        sitekey="082a3b32-feb0-4916-96f8-863216bc8614"
-        onLoad={onLoad}
-        onVerify={setToken}
-        ref={captchaRef}
-      />
+        <HCaptcha
+          sitekey="082a3b32-feb0-4916-96f8-863216bc8614"
+          onLoad={onLoad}
+          onVerify={setToken}
+          ref={captchaRef}
+        />
       </div>
       <div className="d-grid mb-3">
         <button type="submit" className="btn btn-primary">
