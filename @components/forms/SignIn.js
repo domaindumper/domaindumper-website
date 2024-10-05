@@ -11,15 +11,15 @@ export default function FormSignIn() {
   const [password, setPassword] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const [error, setError] = useState(null);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+
+  const [success, setSuccess] = useState(null);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const [token, setToken] = useState(null);
   const captchaRef = useRef(null);
 
   const onLoad = () => {
-    // this reaches out to the hCaptcha JS API and runs the
-    // execute function on it. you can use other functions as
-    // documented here:
-    // https://docs.hcaptcha.com/configuration#jsapi
     captchaRef.current.execute();
   };
 
@@ -40,21 +40,30 @@ export default function FormSignIn() {
       //console.log(response.data);
 
       if (response.data.status === "success") {
-        console.log("Login successful");
-        setError("Login successful");
         const { authToken } = response.data.authToken;
         const { Userdata } = response.data.Userdata;
 
         // Store the auth token in local storage or cookies
         localStorage.setItem("authToken", authToken);
 
+        console.log("Login successful");
+        setSuccess("Login successful");
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 3000);
+
         // Redirect to a protected route or home page
         // window.location.href = "/dashboard";
       } else {
         setError(response.data.message);
+        setShowErrorMessage(true);
+        setTimeout(() => {
+          setShowErrorMessage(false);
+        }, 3000);
       }
     } catch (error) {
-      setError(error.response.data.error);
+      setError(error.message);
     }
   };
   return (
@@ -117,7 +126,8 @@ export default function FormSignIn() {
         <button type="submit" className="btn btn-primary">
           Sign In
         </button>
-        {error && <p className="text-danger pt-2">{error}</p>}
+        {showErrorMessage && <p className="text-danger pt-2">{error}</p>}
+        {showSuccessMessage && <p className="text-success pt-2">{success}</p>}
       </div>
     </form>
   );
