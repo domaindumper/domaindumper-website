@@ -1,14 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "material-symbols";
 import Link from "next/link";
 import axios from "axios";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 export default function FormSignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const [error, setError] = useState(null);
+
+  const [token, setToken] = useState(null);
+  const captchaRef = useRef(null);
+
+  const onLoad = () => {
+    // this reaches out to the hCaptcha JS API and runs the
+    // execute function on it. you can use other functions as
+    // documented here:
+    // https://docs.hcaptcha.com/configuration#jsapi
+    captchaRef.current.execute();
+  };
+
+  useEffect(() => {
+
+    if (token)
+      console.log(`hCaptcha Token: ${token}`);
+
+  }, [token]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -89,6 +108,14 @@ export default function FormSignIn() {
             onClick={() => setIsRevealPwd((prevState) => !prevState)}
           ></span>
         </div>
+      </div>
+      <div className="mb-3">
+      <HCaptcha
+        sitekey="082a3b32-feb0-4916-96f8-863216bc8614"
+        onLoad={onLoad}
+        onVerify={setToken}
+        ref={captchaRef}
+      />
       </div>
       <div className="d-grid mb-3">
         <button type="submit" className="btn btn-primary">
