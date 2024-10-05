@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkLoginStatus = async () => {
       try {
-        const response = await axios.get('https://identity.domaindumper.com/api/v1/user/', {
+        const response = await axios.post('https://identity.domaindumper.com/api/v2/user/', {
           withCredentials: true, // Important for session-based authentication
         });
 
@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
       }
     };
 
-    checkLoginStatus();
+    //checkLoginStatus();
   }, []);
 
   return (
