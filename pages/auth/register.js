@@ -17,7 +17,7 @@ export default function AuthSignUp() {
                     <FormSignUp/>
                     <p className="text-muted small mb-0">
                         <small>Already have an account? </small><span className="vr mx-2 align-middle"></span>
-                        <Link className="text-decoration-underline d-inline-block" href="/auth/signin">
+                        <Link className="text-decoration-underline d-inline-block" href="/auth/login">
                         Sign In
                         </Link>
                     </p>

@@ -1,7 +1,7 @@
 import 'material-symbols'
 export default function FormForgotPassword() {
     return (
-        <form>
+        <form className='pb-2'>
             <div className="mb-3">
                 <input name="reset_pass_email" id="reset_pass_email" placeholder='Registered Email' type="email" className="form-control" required />
             </div>

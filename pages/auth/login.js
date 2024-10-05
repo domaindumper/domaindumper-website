@@ -16,8 +16,8 @@ export default function AuthSignIn() {
                 <p className="text-muted mb-4">Fill the details to continue...</p>
                 <FormSignIn/>
                 <p className="text-muted small mb-0">
-                    <small>Don&apos;t have an account yet? </small><span className="vr mx-2 align-middle"></span>
-                    <Link href="/auth/signup" className="text-decoration-underline">
+                    <small>Don't have an account yet? </small><span className="vr mx-2 align-middle"></span>
+                    <Link href="/auth/register" className="text-decoration-underline">
                     Create One
                     </Link>
                 </p>

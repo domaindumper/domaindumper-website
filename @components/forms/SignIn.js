@@ -8,7 +8,7 @@ export default function FormSignIn() {
         <form>
             <div className="mb-3">
                 <label htmlFor="login_name" className="form-label">Username or Email</label>
-                <input id="login_name" type="email" placeholder="username or email" className="form-control" required />
+                <input id="login_name" type="email" placeholder="Email address" className="form-control" required />
             </div>
             
                 <div className="mb-3">
@@ -19,7 +19,7 @@ export default function FormSignIn() {
                 <div className="position-relative">
                 <input name="login_password" type={isRevealPwd ? "text" : "password"}
           value={pwd}
-          onChange={e => setPwd(e.target.value)} id="login_password" className="form-control pe-5" />
+          onChange={e => setPwd(e.target.value)} id="login_password" placeholder="Password" className="form-control pe-5" />
           {/* Password icon */}
           <span role="button"
           className={isRevealPwd ? "password-hide position-absolute end-0 top-50 translate-middle-y me-2 size-30 d-flex align-items-center justify-content-center" : "password-show position-absolute end-0 top-50 translate-middle-y size-30 me-2 d-flex align-items-center justify-content-center"}
