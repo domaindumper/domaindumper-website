@@ -17,11 +17,13 @@ import TestimonialBoxed from "@components/testimonials/TestimonialBoxed";
 import PricingDefault from "@components/pricing-tables/PricingDefault";
 import { useContext } from "react";
 import SiteContext from "@lib/siteContext";
-import AuthContext from "@lib/Auth/AuthContext";
+import {useAuth} from "@lib/Auth/AuthContext";
 
 export default function Index() {
   const { siteInfo } = useContext(SiteContext);
-  const { isLoggedIn, userData } = useContext(AuthContext);
+  const { isLoggedIn, userData } = useAuth();
+
+  console.log(userData);
   return (
     <>
       <Head>

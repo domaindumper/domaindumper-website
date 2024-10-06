@@ -5,11 +5,11 @@ import Link from "next/link";
 
 import { useContext, useEffect } from "react";
 import SiteContext from "@lib/siteContext";
-import AuthContext from "@lib/Auth/AuthContext";
+import {useAuth} from "@lib/Auth/AuthContext";
 
 export default function AuthSignIn() {
   const { siteInfo } = useContext(SiteContext);
-  const { isLoggedIn, userData } = useContext(AuthContext);
+  const { isLoggedIn, userData } = useAuth();
   const logout = () => {
     setIsLoggedIn(false);
     setUserData(null);

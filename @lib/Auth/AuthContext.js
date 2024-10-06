@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
@@ -10,20 +10,6 @@ export const AuthProvider = ({ children }) => {
     // Check if user is logged in on initial render
     const storedIsLoggedIn = localStorage.getItem('isLoggedIn');
     const storedUserData = localStorage.getItem('userData');
-
-    const storedLoginTime = localStorage.getItem('loginTime');
-    if (storedLoginTime) {
-      const currentTime = new Date().getTime();
-      const loginTime = parseInt(storedLoginTime);
-      const expiryTime = loginTime + 3600000; // 1 hour in milliseconds
-
-      if (currentTime > expiryTime) {
-        // Login has expired
-        localStorage.removeItem('loginTime');
-        setIsLoggedIn(false);
-        setUserData(null);
-      }
-    }
 
     if (storedIsLoggedIn) {
       setIsLoggedIn(true);
@@ -52,4 +38,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export default AuthContext;
+//export default AuthContext;
+
+export const useAuth = () => useContext(AuthContext);
