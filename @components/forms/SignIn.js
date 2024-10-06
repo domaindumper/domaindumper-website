@@ -37,7 +37,7 @@ export default function FormSignIn() {
         token,
       });
 
-      //console.log(response.data);
+      // console.log(response.data);
 
       if (response.data.status === "success") {
         const { authToken } = response.data.authToken;
@@ -45,6 +45,10 @@ export default function FormSignIn() {
 
         // Store the auth token in local storage or cookies
         localStorage.setItem("authToken", authToken);
+        
+        // Store user data or a flag in local storage
+        localStorage.setItem("isLoggedIn", true);
+        localStorage.setItem("userData", JSON.stringify(Userdata));
 
         console.log("Login successful");
         setSuccess("Login successful");

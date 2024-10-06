@@ -5,7 +5,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import "../styles/globals.scss";
 import { SiteProvider } from "@lib/siteContext";
-import { AuthProvider } from '@lib/Auth/AuthContext'; 
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -45,10 +44,8 @@ export default function MyApp({ Component, pageProps }) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page);
   return getLayout(
-    <AuthProvider>
     <SiteProvider>
       <Component {...pageProps} />
     </SiteProvider>
-    </AuthProvider>
   );
 }
