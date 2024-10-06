@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '@lib/Auth/AuthContext'; // Assuming AuthContext is defined in a separate file
+import { AuthContext } from '@lib/Auth/AuthProvider'; // Assuming AuthContext is defined in a separate file
 
 const useAuth = () => {
     const { isLoggedIn, user } = useContext(AuthContext);

@@ -37,18 +37,18 @@ export default function FormSignIn() {
         token,
       });
 
-      // console.log(response.data);
+       //console.log(response.data.Userdata);
 
       if (response.data.status === "success") {
         const { authToken } = response.data.authToken;
         const { Userdata } = response.data.Userdata;
 
         // Store the auth token in local storage or cookies
-        localStorage.setItem("authToken", authToken);
+        localStorage.setItem("authToken", response.data.authToken);
         
         // Store user data or a flag in local storage
         localStorage.setItem("isLoggedIn", true);
-        localStorage.setItem("userData", JSON.stringify(Userdata));
+        localStorage.setItem("userData", JSON.stringify(response.data.Userdata));
 
         console.log("Login successful");
         setSuccess("Login successful");
@@ -58,7 +58,7 @@ export default function FormSignIn() {
         }, 3000);
 
         // Redirect to a protected route or home page
-        // window.location.href = "/dashboard";
+        window.location.href = "/dashboard/";
       } else {
         setError(response.data.message);
         setShowErrorMessage(true);

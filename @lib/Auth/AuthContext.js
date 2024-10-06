@@ -1,36 +1,52 @@
-import { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { createContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(null); // Initialize as null
-  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    const checkLoginStatus = async () => {
-      try {
-        const response = await axios.post('https://identity.domaindumper.com/api/v2/user/', {
-          withCredentials: true, // Important for session-based authentication
-        });
+    // Check if user is logged in on initial render
+    const storedIsLoggedIn = localStorage.getItem('isLoggedIn');
+    const storedUserData = localStorage.getItem('userData');
 
-        if (response.code === 200 && response.status === 'success') {
-          setIsLoggedIn(true);
-          setUser(response.data);
-        } else {
-          setIsLoggedIn(false);
-        }
-      } catch (error) {
-        // Handle errors appropriately
-        console.error('Error checking login status:', error);
+    const storedLoginTime = localStorage.getItem('loginTime');
+    if (storedLoginTime) {
+      const currentTime = new Date().getTime();
+      const loginTime = parseInt(storedLoginTime);
+      const expiryTime = loginTime + 3600000; // 1 hour in milliseconds
+
+      if (currentTime > expiryTime) {
+        // Login has expired
+        localStorage.removeItem('loginTime');
+        setIsLoggedIn(false);
+        setUserData(null);
       }
-    };
+    }
 
-    //checkLoginStatus();
+    if (storedIsLoggedIn) {
+      setIsLoggedIn(true);
+      setUserData(JSON.parse(storedUserData));
+    }
   }, []);
 
+  const login = (userData) => {
+    setIsLoggedIn(true);
+    setUserData(userData);
+    localStorage.setItem('isLoggedIn', true);
+    localStorage.setItem('userData', JSON.stringify(userData));
+  };
+
+  const logout = () => {
+    setIsLoggedIn(false);
+    setUserData(null);
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userData');
+  };
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, user }}>
+    <AuthContext.Provider value={{ isLoggedIn, userData, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -2,12 +2,30 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import ThemeToggler from "./ThemeToggler";
 
-import { useContext, useEffect, useState } from 'react';
-
-
+import { useContext, useEffect, useState } from "react";
 
 export default function Navbar() {
- // const { isLoggedIn, user, isLoading } = useAuth();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
+  useEffect(() => {
+    // Check if user is logged in on initial render
+    const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
+    const storedUserData = localStorage.getItem("userData");
+
+    if (storedIsLoggedIn) {
+      setIsLoggedIn(true);
+      setUserData(JSON.parse(storedUserData));
+    }
+  }, []);
+
+  const logout = () => {
+    setIsLoggedIn(false);
+    setUserData(null);
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userData");
+    localStorage.removeItem("authToken");
+  };
+
   const router = useRouter();
   return (
     <>
@@ -226,22 +244,46 @@ export default function Navbar() {
             href="#"
             data-bs-toggle="dropdown"
           >
-            Account
+            {isLoggedIn ? <>Hi, {userData.fullname}!</> : <>Account</>}
+
             {/* Dropdown Arrow */}
             <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
               expand_more
             </span>
           </a>
           <div className="dropdown-menu dropdown-menu-end">
-            <Link href="/auth/login/" className="dropdown-item">
-              Login
-            </Link>
-            <Link href="/auth/register/" className="dropdown-item">
-              Register
-            </Link>
-            <Link href="/auth/forgot-password" className="dropdown-item">
-              Forget password?
-            </Link>
+            {isLoggedIn ? (
+              <>
+                <Link href="/auth/login/" className="dropdown-item">
+                  Account Details
+                </Link>
+                <Link href="/auth/login/" className="dropdown-item">
+                  Your Profile
+                </Link>
+                <Link href="/auth/login/" className="dropdown-item">
+                  Change Password
+                </Link>
+                <Link
+                  href="/auth/login/"
+                  onClick={logout}
+                  className="dropdown-item"
+                >
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link href="/auth/login/" className="dropdown-item">
+                  Login
+                </Link>
+                <Link href="/auth/register/" className="dropdown-item">
+                  Register
+                </Link>
+                <Link href="/auth/forgot-password" className="dropdown-item">
+                  Forget password?
+                </Link>
+              </>
+            )}
           </div>
         </li>
 
