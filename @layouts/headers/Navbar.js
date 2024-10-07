@@ -4,7 +4,7 @@ import ThemeToggler from "./ThemeToggler";
 
 import { useContext, useEffect, useState } from "react";
 
-export default function Navbar() {
+const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
   useEffect(() => {
@@ -292,3 +292,4 @@ export default function Navbar() {
     </>
   );
 }
+export default Navbar;
