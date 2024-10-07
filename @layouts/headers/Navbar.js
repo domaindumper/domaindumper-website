@@ -245,7 +245,7 @@ const Navbar = () => {
             href="#"
             data-bs-toggle="dropdown"
           >
-            {isLoggedIn ? <>Hi, {userData.fullname}!</> : <>Account</>}
+            {isLoggedIn ? <>Hi, {userData.firstname}!</> : <>Account</>}
 
             {/* Dropdown Arrow */}
             <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
@@ -258,11 +258,8 @@ const Navbar = () => {
                 <Link href="/dashboard/" className="dropdown-item">
                   Dashboard
                 </Link>
-                <Link href="/auth/login/" className="dropdown-item">
+                <Link href="/dashboard/account-details/" className="dropdown-item">
                   Account Details
-                </Link>
-                <Link href="/auth/login/" className="dropdown-item">
-                  Your Profile
                 </Link>
                 <Link href="/auth/login/" className="dropdown-item">
                   Change Password
