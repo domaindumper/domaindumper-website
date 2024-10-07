@@ -48,7 +48,10 @@ const Dashboard = () => {
                     </div>
                     <div className="card-footer">
                       <div className="d-grid gap-2">
-                        <Link href="/dashboard/account-details/" className="btn btn-primary">
+                        <Link
+                          href="/dashboard/account-details/"
+                          className="btn btn-primary"
+                        >
                           Update
                         </Link>
                       </div>
@@ -77,10 +80,8 @@ const Dashboard = () => {
             <div className="col-lg-8 col-xl-9 primary-content">
               <div className="row">
                 <form>
-                <div className="card mb-3">
-                    <div className="card-header">
-                    Account Details
-                    </div>
+                  <div className="card mb-3">
+                    <div className="card-header">Account Details</div>
                     <div className="card-body">
                       <h5 className="card-title">Special title treatment</h5>
                       <p className="card-text">
@@ -90,7 +91,6 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="card mb-3">
-                    
                     <div className="card-body">
                       <h5 className="card-title">Special title treatment</h5>
                       <p className="card-text">
@@ -110,7 +110,6 @@ const Dashboard = () => {
                   </div>
                 </form>
               </div>
-              
             </div>
           </div>
         </div>
