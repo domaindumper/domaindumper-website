@@ -24,6 +24,7 @@ export default function Navbar() {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userData");
     localStorage.removeItem("authToken");
+    router.push("/auth/login/");
   };
 
   const router = useRouter();
@@ -254,6 +255,9 @@ export default function Navbar() {
           <div className="dropdown-menu dropdown-menu-end">
             {isLoggedIn ? (
               <>
+                <Link href="/dashboard/" className="dropdown-item">
+                  Dashboard
+                </Link>
                 <Link href="/auth/login/" className="dropdown-item">
                   Account Details
                 </Link>
@@ -263,13 +267,9 @@ export default function Navbar() {
                 <Link href="/auth/login/" className="dropdown-item">
                   Change Password
                 </Link>
-                <Link
-                  href="/auth/login/"
-                  onClick={logout}
-                  className="dropdown-item"
-                >
+                <button onClick={logout} className="dropdown-item">
                   Logout
-                </Link>
+                </button>
               </>
             ) : (
               <>
