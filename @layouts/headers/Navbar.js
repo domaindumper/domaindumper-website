@@ -261,6 +261,10 @@ const Navbar = () => {
                 <Link href="/dashboard/account-details/" className="dropdown-item">
                   Account Details
                 </Link>
+                <Link href="/dashboard/account-details/" className="dropdown-item">
+                Email History
+                </Link>
+                <div class="dropdown-divider"></div>
                 <Link href="/auth/login/" className="dropdown-item">
                   Change Password
                 </Link>

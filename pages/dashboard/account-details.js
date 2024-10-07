@@ -31,50 +31,26 @@ const Dashboard = () => {
           <div className="row">
             <div className="col-lg-4 col-xl-3">
               <div className="card text-dark bg-light mb-3">
-                <div className="card-header">Your Info</div>
-
-                {userData ? (
-                  <>
-                    <div className="card-body">
-                      <h5 className="card-title"> {userData?.fullname}</h5>
-                      <p className="card-text">
-                        {userData?.address1}
-                        <br />
-                        {userData?.city} {userData?.state} {userData?.state}
-                        <br />
-                        {userData?.countryname}
-                        <br />
-                      </p>
-                    </div>
-                    <div className="card-footer">
-                      <div className="d-grid gap-2">
-                        <Link
-                          href="/dashboard/account-details/"
-                          className="btn btn-primary"
-                        >
-                          Update
-                        </Link>
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        {" "}
-                        <Skeleton />
-                      </h5>
-                      <p className="card-text">
-                        <Skeleton count={3} />
-                      </p>
-                    </div>
-                    <div className="card-footer">
-                      <div className="d-grid gap-2">
-                        <Skeleton count={1} height={45} />
-                      </div>
-                    </div>
-                  </>
-                )}
+                <div className="card-header">Account</div>
+                <div className="card-body">
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item active">
+                      <Link href="/dashboard/account-details/">
+                        Account Details
+                      </Link>
+                    </li>
+                    <li className="list-group-item">
+                      <Link href="/dashboard/account-details/">
+                        Change Password
+                      </Link>
+                    </li>
+                    <li className="list-group-item">
+                      <Link href="/dashboard/account-details/">
+                        Email History
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div className="col-lg-8 col-xl-9 primary-content">
@@ -83,29 +59,122 @@ const Dashboard = () => {
                   <div className="card mb-3">
                     <div className="card-header">Account Details</div>
                     <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">
-                        It appears you do not have any products/services with us
-                        yet. Place an order to get started.
-                      </p>
+                      <div className="row mt-2">
+                        <div className="col-md-6">
+                          <label class="form-label">First name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="First name"
+                            required
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          <label class="form-label">Last name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Last name"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="row mt-2">
+                        <div className="col-md-6">
+                          <label class="form-label">Company</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Company"
+                            required
+                          />
+                        </div>
+                        <div className="col-md-6"></div>
+                      </div>
+                      <div className="row mt-2">
+                        <div className="col-md-6">
+                          <label class="form-label">Email Address</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            placeholder="Email Address"
+                            required
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          <label class="form-label">Phone Number</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Phone Number"
+                            required
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="card mb-3">
                     <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">
-                        It appears you do not have any products/services with us
-                        yet. Place an order to get started.
-                      </p>
+                      <div className="card-header">Billing Address</div>
+                      <div className="row mt-2">
+                        <div className="col-md-6">
+                          <label class="form-label">Address</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Address"
+                            required
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          <label class="form-label">City</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="City"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="row mt-2">
+                        <div className="col-md-6">
+                          <label class="form-label">State/Region</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="State/Region"
+                            required
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          <label class="form-label">Zip Code</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Zip Code"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="row mt-2">
+                        <div className="col-md-6">
+                          <label class="form-label">Country</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Country"
+                            required
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="card mb-3">
                     <div className="card-body">
-                      <h5 className="card-title">Special title treatment</h5>
-                      <p className="card-text">
-                        It appears you do not have any products/services with us
-                        yet. Place an order to get started.
-                      </p>
+                      <div className="card-header">Email Preferences</div>
                     </div>
                   </div>
                 </form>

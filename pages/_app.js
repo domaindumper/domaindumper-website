@@ -4,6 +4,7 @@ import NProgress from "nprogress";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "../styles/globals.scss";
+import "../styles/reset.scss";
 
 import { SiteProvider } from "@lib/siteContext";
 import { AuthProvider } from '@lib/Auth/AuthContext'; 
