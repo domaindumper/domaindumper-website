@@ -7,6 +7,8 @@ import SiteContext from "@lib/siteContext";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+import ProtectedRoute from '@components/protectedRoute';
+
 const Dashboard = () => {
   const { siteInfo } = useContext(SiteContext);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,6 +31,7 @@ const Dashboard = () => {
   console.log(userData);
   return (
     <>
+    <ProtectedRoute>
       <Head>
         <title>Dashboard | {siteInfo.title}</title>
       </Head>
@@ -174,6 +177,7 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
+      </ProtectedRoute>
     </>
   );
 };
