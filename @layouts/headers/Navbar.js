@@ -214,10 +214,10 @@ const Navbar = () => {
           </a>
           <div className="dropdown-menu">
             <Link
-              href="/support/open-support-tickets/"
+              href="/support/open-support-ticket/"
               className="dropdown-item"
             >
-              Open Support Tickets
+              Open Support Ticket
             </Link>
             <Link href="/support/api-documents/" className="dropdown-item">
               API Documents
@@ -264,7 +264,7 @@ const Navbar = () => {
                 <Link href="/dashboard/account-details/" className="dropdown-item">
                 Email History
                 </Link>
-                <div class="dropdown-divider"></div>
+                <div className="dropdown-divider"></div>
                 <Link href="/auth/login/" className="dropdown-item">
                   Change Password
                 </Link>

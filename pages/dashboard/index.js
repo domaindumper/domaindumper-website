@@ -1,11 +1,14 @@
-import Layout from "@layouts/LayoutDefault";
+import Layout from "@layouts/LayoutDashboard";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
+import Head from "next/head";
+import SiteContext from "@lib/siteContext";
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const Dashboard = () => {
+  const { siteInfo } = useContext(SiteContext);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
 
@@ -26,7 +29,10 @@ const Dashboard = () => {
   console.log(userData);
   return (
     <>
-      <section className="bg-light">
+      <Head>
+        <title>Dashboard | {siteInfo.title}</title>
+      </Head>
+      <section className="bg-light" id="dashboard-area">
         <div className="container pt-12 pb-9 pt-lg-15 pb-lg-12 text-left">
           <div className="row">
             <div className="col-md-3">
@@ -40,7 +46,7 @@ const Dashboard = () => {
                       <p className="card-text">
                         {userData?.address1}
                         <br />
-                        {userData?.city} {userData?.state} {userData?.state}
+                        {userData?.city} {userData?.state} {userData?.postcode}
                         <br />
                         {userData?.countryname}
                         <br />
@@ -48,7 +54,10 @@ const Dashboard = () => {
                     </div>
                     <div className="card-footer">
                       <div className="d-grid gap-2">
-                        <Link href="/dashboard/account-details/" className="btn btn-primary">
+                        <Link
+                          href="/dashboard/account-details/"
+                          className="btn btn-primary"
+                        >
                           Update
                         </Link>
                       </div>

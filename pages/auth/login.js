@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { useContext, useEffect } from "react";
 import SiteContext from "@lib/siteContext";
-import {useAuth} from "@lib/Auth/AuthContext";
+import { useAuth } from "@lib/Auth/AuthContext";
 
 export default function AuthSignIn() {
   const { siteInfo } = useContext(SiteContext);
@@ -20,7 +20,7 @@ export default function AuthSignIn() {
   return (
     <>
       <Head>
-        <title>{siteInfo.title} | SignIn</title>
+        <title>SignIn | {siteInfo.title}</title>
       </Head>
       <div className="container pt-12 pt-lg-15 pb-9 pb-lg-11">
         <div className="row justify-content-center">
