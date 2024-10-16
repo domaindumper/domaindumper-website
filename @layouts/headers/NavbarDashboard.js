@@ -195,7 +195,7 @@ const Navbar = () => {
                 <Link href="/auth/register/" className="dropdown-item">
                   Register
                 </Link>
-                <Link href="/auth/forgot-password" className="dropdown-item">
+                <Link href="/auth/forgot-password/" className="dropdown-item">
                   Forget password?
                 </Link>
               </>
