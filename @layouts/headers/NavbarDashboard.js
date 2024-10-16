@@ -139,7 +139,7 @@ const Navbar = () => {
         </li>
         <li className="nav-item">
           <Link href="/" className="nav-link">
-          Open Support Ticket
+          Open Ticket
           </Link>
         </li>
       </ul>
