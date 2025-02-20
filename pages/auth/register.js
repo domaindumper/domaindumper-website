@@ -1,5 +1,5 @@
-import FormSignUp from "@components/forms/SignUp";
-import Layout from "@layouts/LayoutDefault";
+import FormSignUp from "components/forms/SignUp";
+import Layout from "layouts/LayoutDefault";
 import Head from "next/head";
 import Link from "next/link";
 

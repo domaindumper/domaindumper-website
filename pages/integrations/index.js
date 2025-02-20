@@ -1,8 +1,8 @@
-import BreadcrumbLight from "@components/breadcrumb/BreadcrumbLight";
-import CtaDefault from "@components/call-to-actions/CtaDefault";
-import IntegrationCard from "@components/integrations/IntegrationCard";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import BreadcrumbLight from "components/breadcrumb/BreadcrumbLight";
+import CtaDefault from "components/call-to-actions/CtaDefault";
+import IntegrationCard from "components/integrations/IntegrationCard";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 export const appSlack = '/img/integrations/slack.svg'
 export const appMailchimp = '/img/integrations/mailchimp.svg'
 export const appTrello = '/img/integrations/trello.svg'

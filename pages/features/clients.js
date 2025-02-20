@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import CtaBoxed from "@components/call-to-actions/CtaBoxed";
-import ClientsDefault from "@components/clients/ClientsDefault";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
-import ErrorBoundary from "@components/ErrorBoundary";
+import CtaBoxed from "components/call-to-actions/CtaBoxed";
+import ClientsDefault from "components/clients/ClientsDefault";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
+import ErrorBoundary from "components/ErrorBoundary";
 
 // Dynamically import ClientsCarousel with no SSR
 const ClientsCarousel = dynamic(
-  () => import('@components/clients/ClientsCarousel'),
+  () => import('components/clients/ClientsCarousel'),
   { ssr: false }
 );
 

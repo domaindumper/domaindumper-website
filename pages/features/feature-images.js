@@ -1,10 +1,10 @@
 
-import FeatureImageCollapses from "@components/features/feature-image/FeatureImageCollapses";
-import FeatureImageLeft1 from "@components/features/feature-image/FeatureImageLeft1";
-import FeatureImageLeft2 from "@components/features/feature-image/FeatureImageLeft2";
-import FeatureImageRight1 from "@components/features/feature-image/FeatureImageRight1";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import FeatureImageCollapses from "components/features/feature-image/FeatureImageCollapses";
+import FeatureImageLeft1 from "components/features/feature-image/FeatureImageLeft1";
+import FeatureImageLeft2 from "components/features/feature-image/FeatureImageLeft2";
+import FeatureImageRight1 from "components/features/feature-image/FeatureImageRight1";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 
 export default function FeatureImages() {
     return (

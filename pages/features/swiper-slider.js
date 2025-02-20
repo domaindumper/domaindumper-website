@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 
 // Dynamically import slider components with no SSR
-const ClientsCarousel = dynamic(() => import("@components/clients/ClientsCarousel"), {
+const ClientsCarousel = dynamic(() => import("components/clients/ClientsCarousel"), {
     ssr: false
 });
 
-const TestimonialsSlider = dynamic(() => import("@components/testimonials/TestimonialsSlider"), {
+const TestimonialsSlider = dynamic(() => import("components/testimonials/TestimonialsSlider"), {
     ssr: false
 });
 

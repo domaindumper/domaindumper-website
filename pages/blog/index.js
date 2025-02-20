@@ -1,8 +1,8 @@
-import MoreStories from '@components/blog/more-stories';
-import HeroPost from '@components/blog/hero-post';
-import { getAllPosts } from '@lib/posts-api';
-import Layout from '@layouts/LayoutDefault';
-import PageHeaderDefault from '@components/page-headers/PageHeaderDefault';
+import MoreStories from 'components/blog/more-stories';
+import HeroPost from 'components/blog/hero-post';
+import { getAllPosts } from 'lib/posts-api';
+import Layout from 'layouts/LayoutDefault';
+import PageHeaderDefault from 'components/page-headers/PageHeaderDefault';
 export default function BlogPosts({ allPosts }) {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);

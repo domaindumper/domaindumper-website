@@ -7,8 +7,10 @@ import "aos/dist/aos.css";
 import "../styles/globals.scss";
 import "../styles/reset.scss";
 
-import { SiteProvider, defaultSiteInfo } from '@/context/SiteContext';
-import { AuthProvider } from '@/context/AuthContext'; 
+import { SiteProvider, defaultSiteInfo } from '../context/SiteContext';
+import { AuthProvider } from '../context/AuthContext'; 
+import { LanguageProvider } from '../context/LanguageContext';
+import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -55,7 +57,6 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>DomainDumper</title>
-          <meta name="description" content="DomainDumper - Domain Management Solution" />
         </Head>
         {getLayout(<Component {...pageProps} />)}
       </AuthProvider>
@@ -63,4 +64,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

@@ -46,3 +46,187 @@
   }
 }
 
+// Language Switcher Styles
+.language-switcher {
+  .btn-link {
+    padding: 0.5rem;
+    color: var(--bs-gray-400);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    &:hover {
+      color: var(--bs-primary);
+    }
+
+    &::after {
+      margin-left: 0.25rem;
+    }
+
+    .flag-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .dropdown-menu {
+    min-width: 180px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: var(--bs-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+    .dropdown-item {
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--bs-gray-400);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--bs-white);
+      }
+
+      &.active {
+        background-color: rgba(var(--bs-primary-rgb), 0.1);
+        color: var(--bs-primary);
+      }
+
+      .flag-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+// Footer Hover Effects
+.footer {
+  .hover-text-primary {
+    transition: color 0.2s ease-in-out;
+    
+    &:hover {
+      color: var(--bs-primary) !important;
+    }
+  }
+
+  .social-links {
+    a {
+      transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+      
+      &:hover {
+        color: var(--bs-primary) !important;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .newsletter-form {
+    .form-control {
+      &:focus {
+        border-color: var(--bs-primary);
+        box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+      }
+    }
+
+    .input-group {
+      border-radius: var(--bs-border-radius);
+      overflow: hidden;
+      
+      .form-control {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--bs-gray-300);
+        padding: 0.75rem 1.25rem;
+        height: 48px;
+        
+        &::placeholder {
+          color: var(--bs-gray-500);
+        }
+        
+        &:focus {
+          background-color: rgba(255, 255, 255, 0.1);
+          border-color: var(--bs-primary);
+          box-shadow: none;
+          color: var(--bs-white);
+        }
+      }
+      
+      .btn-primary {
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+        border: none;
+        height: 48px;
+        
+        &:hover {
+          transform: translateY(0);
+        }
+        
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+    }
+
+    .subscription-status {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      
+      &.success {
+        color: var(--bs-success);
+      }
+      
+      &.error {
+        color: var(--bs-danger);
+      }
+    }
+  }
+}
+
+.footer {
+  .newsletter-form {
+    margin-bottom: 2rem; // Add space between newsletter and social icons
+    
+    form {
+      margin-bottom: 1.5rem; // Space between form and subscription status
+    }
+    
+    .subscription-status {
+      margin-bottom: 1.5rem; // Space between status and social icons
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem; // Add top margin to social icons
+    
+    a {
+      transition: all 0.2s ease-in-out;
+      
+      &:hover {
+        color: var(--bs-primary) !important;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+

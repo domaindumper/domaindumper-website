@@ -1,9 +1,9 @@
 
-import CtaBoxed from "@components/call-to-actions/CtaBoxed";
-import FeatureTabDefault from "@components/features/feature-tabs/FeatureTabDefault";
-import FeatureTabHorizontal from "@components/features/feature-tabs/FeatureTabHorizontal";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import CtaBoxed from "components/call-to-actions/CtaBoxed";
+import FeatureTabDefault from "components/features/feature-tabs/FeatureTabDefault";
+import FeatureTabHorizontal from "components/features/feature-tabs/FeatureTabHorizontal";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 
 export default function TabbedContent() {
     return (

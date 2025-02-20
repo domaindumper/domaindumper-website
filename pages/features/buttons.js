@@ -1,7 +1,7 @@
 
-import CtaBoxed from "@components/call-to-actions/CtaBoxed";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import CtaBoxed from "components/call-to-actions/CtaBoxed";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 
 export default function Buttons() {
     return (

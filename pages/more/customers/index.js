@@ -1,7 +1,7 @@
 
-import CustomerStoryCard from "@components/customers/CustomerStoryCard";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import CustomerStoryCard from "components/customers/CustomerStoryCard";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 import useSWR from 'swr';
 export default function Customers() {
   const fetcher = (url) => fetch(url).then((res) => res.json());

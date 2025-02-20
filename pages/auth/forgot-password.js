@@ -1,5 +1,5 @@
-import FormForgotPassword from "@components/forms/ForgotPassword";
-import Layout from "@layouts/LayoutDefault";
+import FormForgotPassword from "components/forms/ForgotPassword";
+import Layout from "layouts/LayoutDefault";
 import Head from "next/head";
 import Link from "next/link";
 

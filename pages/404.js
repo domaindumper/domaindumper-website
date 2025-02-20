@@ -1,4 +1,4 @@
-import Layout from "@layouts/LayoutDefault"
+import Layout from "layouts/LayoutDefault"
 
 export default function Custom404() {
     return <div className="container pt-12 pb-9 pt-lg-15 pb-lg-12 text-center">

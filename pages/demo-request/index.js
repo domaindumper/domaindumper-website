@@ -1,6 +1,6 @@
-import DividerBottom2 from "@components/dividers/DividerBottom2";
-import FormDemoRequest from "@components/forms/DemoRequest";
-import Layout from "@layouts/LayoutDefault";
+import DividerBottom2 from "components/dividers/DividerBottom2";
+import FormDemoRequest from "components/forms/DemoRequest";
+import Layout from "layouts/LayoutDefault";
 
 export default function DemoRequest() {
     return (

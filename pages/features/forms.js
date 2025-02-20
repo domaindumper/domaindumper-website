@@ -1,11 +1,11 @@
 
-import CtaBoxed from "@components/call-to-actions/CtaBoxed";
-import FormDemoRequest from "@components/forms/DemoRequest";
-import FormForgotPassword from "@components/forms/ForgotPassword";
-import FormSignIn from "@components/forms/SignIn";
-import FormSignUp from "@components/forms/SignUp";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import CtaBoxed from "components/call-to-actions/CtaBoxed";
+import FormDemoRequest from "components/forms/DemoRequest";
+import FormForgotPassword from "components/forms/ForgotPassword";
+import FormSignIn from "components/forms/SignIn";
+import FormSignUp from "components/forms/SignUp";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 
 export default function Forms() {
     return (

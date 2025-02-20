@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import 'material-symbols'
 import Link from 'next/link'
-import Layout from '@layouts/LayoutDefault'
+import Layout from 'layouts/LayoutDefault'
 export default function Home() {
     return (
         <>

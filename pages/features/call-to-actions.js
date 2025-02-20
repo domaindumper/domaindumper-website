@@ -1,8 +1,8 @@
-import CtaBoxed from "@components/call-to-actions/CtaBoxed";
-import CtaDefault from "@components/call-to-actions/CtaDefault";
-import CtaVertical from "@components/call-to-actions/CtaVertical";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import CtaBoxed from "components/call-to-actions/CtaBoxed";
+import CtaDefault from "components/call-to-actions/CtaDefault";
+import CtaVertical from "components/call-to-actions/CtaVertical";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 
 export default function CallToActions() {
     return (

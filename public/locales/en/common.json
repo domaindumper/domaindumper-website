@@ -1,0 +1,58 @@
+{
+  "welcome": "Welcome to DomainDumper",
+  "switchLanguage": "Switch Language",
+  "pricing": "Pricing",
+  "domains": "Domain Database",
+  "about": "About Us",
+  "contact": "Contact Us",
+  "footer": {
+    "allRightsReserved": "All rights reserved",
+    "subscribe": "Subscribe to Newsletter",
+    "emailPlaceholder": "Enter your email",
+    "subscribeButton": "Subscribe",
+    "language": "Language",
+    "changeLanguage": "Change Language",
+    "companyDescription": "Your go-to for finding and buying the perfect domain name at the best price. We offer free API access for all our domain services.",
+    "products": {
+      "title": "Products",
+      "pricing": "Pricing",
+      "domains": "Domain Database",
+      "tld": "TLD and gTLD",
+      "registrar": "Registrar Data"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "api": "API Documents",
+      "kb": "Knowledgebase",
+      "contact": "Contact Us"
+    },
+    "subscribe": {
+      "title": "Subscribe to Newsletter",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "success": "Thank you for subscribing!",
+      "error": "Subscription failed. Please try again."
+    },
+    "social": {
+      "facebook": "Follow us on Facebook",
+      "instagram": "Follow us on Instagram",
+      "twitter": "Follow us on X",
+      "github": "Visit our GitHub"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "search": {
+    "placeholder": "Search domains...",
+    "button": "Search"
+  },
+  "language": {
+    "en": "English",
+    "hi": "हिंदी",
+    "select": "Select Language"
+  }
+}

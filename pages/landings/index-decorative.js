@@ -1,14 +1,14 @@
 
 
-import CtaVertical from "@components/call-to-actions/CtaVertical";
-import ClientsCarousel from "@components/clients/ClientsCarousel";
-import FeatureIconWithTitle from "@components/features/feature-icons/FeatureIconWithTitle";
-import FeatureTabHorizontal from "@components/features/feature-tabs/FeatureTabHorizontal";
-import HeroDecorative from "@components/hero-sliders/HeroDecorative";
-import Numbers1 from "@components/numbers/Numbers1";
-import ProcessDefault from "@components/process/ProcessDefault";
-import TestimonialRating from "@components/testimonials/TestimonialRating";
-import LayoutCombine from "@layouts/LayoutCombine";
+import CtaVertical from "components/call-to-actions/CtaVertical";
+import ClientsCarousel from "components/clients/ClientsCarousel";
+import FeatureIconWithTitle from "components/features/feature-icons/FeatureIconWithTitle";
+import FeatureTabHorizontal from "components/features/feature-tabs/FeatureTabHorizontal";
+import HeroDecorative from "components/hero-sliders/HeroDecorative";
+import Numbers1 from "components/numbers/Numbers1";
+import ProcessDefault from "components/process/ProcessDefault";
+import TestimonialRating from "components/testimonials/TestimonialRating";
+import LayoutCombine from "layouts/LayoutCombine";
 import Head from "next/head";
 
 export default function IndexDecorative() {

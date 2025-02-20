@@ -1,20 +1,20 @@
 import Head from 'next/head'
 import 'material-symbols'
 import Link from 'next/link'
-import FeatureIconDefault from '@components/features/feature-icons/FeatureIconDefault'
-import HeroDefault from '@components/hero-sliders/HeroDefault'
-import Layout from '@layouts/LayoutDefault'
-import FeatureImageLeft1 from '@components/features/feature-image/FeatureImageLeft1'
-import FeatureImageRight1 from '@components/features/feature-image/FeatureImageRight1'
-import FeatureImageLeft2 from '@components/features/feature-image/FeatureImageLeft2'
-import CtaBoxed from '@components/call-to-actions/CtaBoxed'
-import IntegrationDefault from '@components/integrations/IntegrationDefault'
-import FeatureIconLeft from '@components/features/feature-icons/FeatureIconLeft'
+import FeatureIconDefault from 'components/features/feature-icons/FeatureIconDefault'
+import HeroDefault from 'components/hero-sliders/HeroDefault'
+import Layout from 'layouts/LayoutDefault'
+import FeatureImageLeft1 from 'components/features/feature-image/FeatureImageLeft1'
+import FeatureImageRight1 from 'components/features/feature-image/FeatureImageRight1'
+import FeatureImageLeft2 from 'components/features/feature-image/FeatureImageLeft2'
+import CtaBoxed from 'components/call-to-actions/CtaBoxed'
+import IntegrationDefault from 'components/integrations/IntegrationDefault'
+import FeatureIconLeft from 'components/features/feature-icons/FeatureIconLeft'
 export const airbnb = '/img/partners/airbnb-white.svg';
 export const airbnbAvatar = '/img/avatars/male/1.jpg';
-import FeatureIconVertical from '@components/features/feature-icons/FeatureIconVertical'
-import TestimonialBoxed from '@components/testimonials/TestimonialBoxed'
-import PricingDefault from '@components/pricing-tables/PricingDefault'
+import FeatureIconVertical from 'components/features/feature-icons/FeatureIconVertical'
+import TestimonialBoxed from 'components/testimonials/TestimonialBoxed'
+import PricingDefault from 'components/pricing-tables/PricingDefault'
 export default function Index() {
   return (
     <>

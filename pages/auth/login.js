@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import FormSignIn from "@components/forms/SignIn";
-import Layout from "@layouts/LayoutDefault";
+import FormSignIn from "components/forms/SignIn";
+import Layout from "layouts/LayoutDefault";
 import Head from "next/head";
 import Link from "next/link";
 
-import { useSite } from "@/context/SiteContext";
-import { useAuth } from "@/context/AuthContext";
+import { useSite } from "../../context/SiteContext";
+import { useAuth } from "../../context/AuthContext";
 
 export default function AuthSignIn() {
   const router = useRouter();

@@ -1,11 +1,11 @@
-import CtaBoxed from "@components/call-to-actions/CtaBoxed";
-import FeatureIconDefault from "@components/features/feature-icons/FeatureIconDefault";
-import FeatureIconLeft from "@components/features/feature-icons/FeatureIconLeft";
-import FeatureIconTiny from "@components/features/feature-icons/FeatureIconTiny";
-import FeatureIconVertical from "@components/features/feature-icons/FeatureIconVertical";
-import FeatureIconWithTitle from "@components/features/feature-icons/FeatureIconWithTitle";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
+import CtaBoxed from "components/call-to-actions/CtaBoxed";
+import FeatureIconDefault from "components/features/feature-icons/FeatureIconDefault";
+import FeatureIconLeft from "components/features/feature-icons/FeatureIconLeft";
+import FeatureIconTiny from "components/features/feature-icons/FeatureIconTiny";
+import FeatureIconVertical from "components/features/feature-icons/FeatureIconVertical";
+import FeatureIconWithTitle from "components/features/feature-icons/FeatureIconWithTitle";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import Layout from "layouts/LayoutDefault";
 export default function FeatureIcons() {
     return (
         <>

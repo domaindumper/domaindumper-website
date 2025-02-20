@@ -1,15 +1,15 @@
-import Layout from "@layouts/LayoutDashboard";
+import Layout from "layouts/LayoutDashboard";
 import Link from "next/link";
 import Head from "next/head";
-import { useSite } from '@/context/SiteContext';
-import { getCommonPageProps } from '@/lib/getCommonPageProps';
-import ProtectedRoute from '@components/protectedRoute';
+import { useSite } from '../../context/SiteContext';
+import { getCommonPageProps } from '../../lib/getCommonPageProps';
+import ProtectedRoute from 'components/protectedRoute';
 import "material-symbols";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { API_END } from "@lib/api";
+import { API_END } from "lib/api";
 
 export async function getServerSideProps(context) {
   const commonProps = await getCommonPageProps();

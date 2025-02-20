@@ -1,10 +1,10 @@
 
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import PricingAlt from "@components/pricing-tables/PricingAlt";
-import PricingComparison from "@components/pricing-tables/PricingComparison";
-import PricingDefault from "@components/pricing-tables/PricingDefault";
-import PricingMini from "@components/pricing-tables/PricingMini";
-import Layout from "@layouts/LayoutDefault";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import PricingAlt from "components/pricing-tables/PricingAlt";
+import PricingComparison from "components/pricing-tables/PricingComparison";
+import PricingDefault from "components/pricing-tables/PricingDefault";
+import PricingMini from "components/pricing-tables/PricingMini";
+import Layout from "layouts/LayoutDefault";
 
 export default function PricingTables() {
     return (

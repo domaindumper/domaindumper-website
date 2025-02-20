@@ -1,14 +1,14 @@
-import Layout from "@layouts/LayoutDashboard";
+import Layout from "layouts/LayoutDashboard";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import Head from "next/head";
-import SiteContext from "@lib/siteContext";
+import SiteContext from "lib/siteContext";
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import ProtectedRoute from '@components/protectedRoute';
-import { getCommonPageProps } from '@/lib/getCommonPageProps';
+import ProtectedRoute from 'components/protectedRoute';
+import { getCommonPageProps } from '../../lib/getCommonPageProps';
 
 const Dashboard = () => {
   const { siteInfo } = useContext(SiteContext);

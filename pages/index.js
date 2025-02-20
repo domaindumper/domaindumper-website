@@ -2,23 +2,30 @@ import { useState } from 'react';
 import Head from 'next/head';
 import "material-symbols";
 import Link from "next/link";
-import FeatureIconDefault from "@components/features/feature-icons/FeatureIconDefault";
-import HeroDefault from "@components/hero-sliders/HeroDefault";
-import Layout from "@layouts/LayoutDefault";
-import FeatureImageLeft1 from "@components/features/feature-image/FeatureImageLeft1";
-import FeatureImageRight1 from "@components/features/feature-image/FeatureImageRight1";
-import FeatureImageLeft2 from "@components/features/feature-image/FeatureImageLeft2";
-import CtaBoxed from "@components/call-to-actions/CtaBoxed";
-import IntegrationDefault from "@components/integrations/IntegrationDefault";
-import FeatureIconLeft from "@components/features/feature-icons/FeatureIconLeft";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+// Fix component imports with consistent relative paths
+import FeatureIconDefault from "../components/features/feature-icons/FeatureIconDefault";
+import HeroDefault from "../components/hero-sliders/HeroDefault";
+import Layout from "../layouts/LayoutDefault";
+import FeatureImageLeft1 from "../components/features/feature-image/FeatureImageLeft1";
+import FeatureImageRight1 from "../components/features/feature-image/FeatureImageRight1";
+import FeatureImageLeft2 from "../components/features/feature-image/FeatureImageLeft2";
+import CtaBoxed from "../components/call-to-actions/CtaBoxed";
+import IntegrationDefault from "../components/integrations/IntegrationDefault";
+import FeatureIconLeft from "../components/features/feature-icons/FeatureIconLeft";
+import FeatureIconVertical from "../components/features/feature-icons/FeatureIconVertical";
+import TestimonialBoxed from "../components/testimonials/TestimonialBoxed";
+import PricingDefault from "../components/pricing-tables/PricingDefault";
+
+// Fix context and utils imports
+import { useSite } from '../context/SiteContext';
+import { useAuth } from '../context/AuthContext';
+import { formatPageTitle } from '../utils/formatters';
+
+// Asset exports
 export const airbnb = "/img/partners/airbnb-white.svg";
 export const airbnbAvatar = "/img/avatars/male/1.jpg";
-import FeatureIconVertical from "@components/features/feature-icons/FeatureIconVertical";
-import TestimonialBoxed from "@components/testimonials/TestimonialBoxed";
-import PricingDefault from "@components/pricing-tables/PricingDefault";
-import { useSite } from '@/context/SiteContext';
-import { useAuth } from '@/context/AuthContext';
-import { formatPageTitle } from '@/utils/formatters';
 
 export default function Home() {
   const { siteInfo } = useSite();
@@ -343,3 +350,11 @@ export default function Home() {
 Home.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}

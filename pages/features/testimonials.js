@@ -1,10 +1,10 @@
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import TestimonialBoxed from "@components/testimonials/TestimonialBoxed";
-import TestimonialRating from "@components/testimonials/TestimonialRating";
-import TestimonialsDefault from "@components/testimonials/TestimonialDefault";
-import TestimonialTiny from "@components/testimonials/TestimonialTiny";
-import Layout from "@layouts/LayoutDefault";
-import CtaBoxed from "@components/call-to-actions/CtaBoxed";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import TestimonialBoxed from "components/testimonials/TestimonialBoxed";
+import TestimonialRating from "components/testimonials/TestimonialRating";
+import TestimonialsDefault from "components/testimonials/TestimonialDefault";
+import TestimonialTiny from "components/testimonials/TestimonialTiny";
+import Layout from "layouts/LayoutDefault";
+import CtaBoxed from "components/call-to-actions/CtaBoxed";
 export const airbnb = '/img/partners/airbnb-white.svg';
 export const airbnbAvatar = '/img/avatars/male/1.jpg';
 export const brandHubspot = '/img/partners/hubspot-dark.svg';

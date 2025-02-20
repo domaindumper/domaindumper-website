@@ -1,12 +1,12 @@
 import Head from "next/head";
-import { useSite } from '@/context/SiteContext';
-import { getCommonPageProps } from '@/lib/getCommonPageProps';
-import Layout from "@layouts/LayoutDefault";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import FeatureIconWithTitle from "@components/features/feature-icons/FeatureIconWithTitle";
-import FeatureImageLeft1 from "@components/features/feature-image/FeatureImageLeft1";
-import FeatureImageRight1 from "@components/features/feature-image/FeatureImageRight1";
-import CtaDefault from "@components/call-to-actions/CtaDefault";
+import { useSite } from 'context/SiteContext';
+import { getCommonPageProps } from 'lib/getCommonPageProps';
+import Layout from "layouts/LayoutDefault";
+import PageHeaderDefault from "components/page-headers/PageHeaderDefault";
+import FeatureIconWithTitle from "components/features/feature-icons/FeatureIconWithTitle";
+import FeatureImageLeft1 from "components/features/feature-image/FeatureImageLeft1";
+import FeatureImageRight1 from "components/features/feature-image/FeatureImageRight1";
+import CtaDefault from "components/call-to-actions/CtaDefault";
 
 export const getStaticProps = getCommonPageProps;
 
