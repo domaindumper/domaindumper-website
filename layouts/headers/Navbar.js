@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import ThemeToggler from "./ThemeToggler";
+import { useTranslation } from 'next-i18next';
 
 import { useContext, useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
+  const { t } = useTranslation('common');
+
   useEffect(() => {
     // Check if user is logged in on initial render
     const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
@@ -32,17 +35,11 @@ const Navbar = () => {
     <>
       <ul className="mx-auto navbar-nav">
         <li className="nav-item dropdown position-static">
-          <a
-            className={
-              router.pathname.startsWith("/features")
-                ? "nav-link dropdown-arrow active"
-                : "nav-link dropdown-arrow"
-            }
+          <a className={router.pathname.startsWith("/features") ? "nav-link dropdown-arrow active" : "nav-link dropdown-arrow"}
             href="/domains/"
             data-bs-toggle="dropdown"
           >
-            Domain
-            {/* Dropdown Arrow */}
+            {t('nav.domain.title')}
             <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
               expand_more
             </span>
@@ -50,7 +47,7 @@ const Navbar = () => {
           <div className="dropdown-menu dropdown-menu-full">
             <div className="row">
               <div className="col-lg-3 me-lg-auto">
-                <h6 className="dropdown-header">Overview</h6>
+                <h6 className="dropdown-header">{t('nav.domain.overview')}</h6>
                 <Link className="dropdown-item py-3 mb-3" href="/domains/">
                   <div className="d-flex align-items-center">
                     <div className="flex-shrink-0 shadow-sm size-40 d-flex align-items-center justify-content-center me-3 rounded-circle bg-white">
@@ -59,69 +56,45 @@ const Navbar = () => {
                       </span>
                     </div>
                     <div className="flex-grow-1">
-                      <h6 className="mb-1">Domain Data</h6>
-                      <small className="opacity-75 lh-sm">
-                        Full list of features
-                      </small>
+                      <h6 className="mb-1">{t('nav.domain.domainData')}</h6>
+                      <small className="opacity-75 lh-sm">{t('nav.domain.features')}</small>
                     </div>
                   </div>
                 </Link>
               </div>
               <div className="col-lg-8 ps-lg-8 border-start-lg">
-                <h6 className="dropdown-header">Domain's All Services</h6>
+                <h6 className="dropdown-header">{t('nav.domain.services')}</h6>
                 <div className="row">
                   <div className="col-lg-6 mb-6 mb-lg-0">
-                    <Link className="dropdown-item" href="/domains/">
-                      All registered domains
-                    </Link>
-                    <Link className="dropdown-item" href="/domains/">
-                      Newly registered domains
-                    </Link>
-                    <Link className="dropdown-item" href="/domains/">
-                      Expired domains list
-                    </Link>
-                    <Link className="dropdown-item" href="/domains/">
-                      Deleted domains list
-                    </Link>
+                    <Link className="dropdown-item" href="/domains/">{t('nav.domain.allRegistered')}</Link>
+                    <Link className="dropdown-item" href="/domains/">{t('nav.domain.newlyRegistered')}</Link>
+                    <Link className="dropdown-item" href="/domains/">{t('nav.domain.expiredDomains')}</Link>
+                    <Link className="dropdown-item" href="/domains/">{t('nav.domain.deletedDomains')}</Link>
                   </div>
                   <div className="col-lg-6 mb-6 mb-lg-0">
-                    <Link className="dropdown-item" href="/domains/">
-                      Check domain availability
-                    </Link>
-                    <Link className="dropdown-item" href="/domains/">
-                      AI domain name suggestions
-                    </Link>
+                    <Link className="dropdown-item" href="/domains/">{t('nav.domain.checkAvailability')}</Link>
+                    <Link className="dropdown-item" href="/domains/">{t('nav.domain.aiSuggestions')}</Link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </li>
+
         <li className="nav-item dropdown">
-          <a
-            className={
-              router.pathname.startsWith("/tlds")
-                ? "nav-link dropdown-arrow active"
-                : "nav-link dropdown-arrow"
-            }
+          <a className={router.pathname.startsWith("/tlds") ? "nav-link dropdown-arrow active" : "nav-link dropdown-arrow"}
             href="/tlds/"
             data-bs-toggle="dropdown"
           >
-            Tlds
-            {/* Dropdown Arrow */}
-            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
-              expand_more
-            </span>
+            {t('nav.tlds.title')}
+            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">expand_more</span>
           </a>
           <div className="dropdown-menu">
-            <Link href="/tlds/tlds-from-a-z/" className="dropdown-item">
-              Tlds From A-Z
-            </Link>
-            <Link href="/tlds/tlds-categories/" className="dropdown-item">
-              Tlds Categories
-            </Link>
+            <Link href="/tlds/tlds-from-a-z/" className="dropdown-item">{t('nav.tlds.fromAtoZ')}</Link>
+            <Link href="/tlds/tlds-categories/" className="dropdown-item">{t('nav.tlds.categories')}</Link>
           </div>
         </li>
+
         <li className="nav-item dropdown">
           <a
             className={
@@ -132,8 +105,7 @@ const Navbar = () => {
             href="/registrars/"
             data-bs-toggle="dropdown"
           >
-            Registrars
-            {/* Dropdown Arrow */}
+            {t('nav.registrars.title')}
             <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
               expand_more
             </span>
@@ -143,31 +115,30 @@ const Navbar = () => {
               href="/registrars/all-domains-registrars/"
               className="dropdown-item"
             >
-              All domains registrars
+              {t('nav.registrars.allRegistrars')}
             </Link>
             <Link href="/registrars/tlds-offered/" className="dropdown-item">
-              TLDs Offered
+              {t('nav.registrars.tldsOffered')}
             </Link>
             <Link
               href="/registrars/cheapest-domain-registration/"
               className="dropdown-item"
             >
-              Cheapest domain registration
+              {t('nav.registrars.cheapestRegistration')}
             </Link>
             <Link
               href="/registrars/best-3-year-value/"
               className="dropdown-item"
             >
-              Best 3 Year Value
+              {t('nav.registrars.bestValue')}
             </Link>
           </div>
         </li>
 
         <li className="nav-item">
-          <Link href="/pricing/" className="nav-link">
-            Pricing
-          </Link>
+          <Link href="/pricing/" className="nav-link">{t('nav.pricing')}</Link>
         </li>
+
         <li className="nav-item dropdown">
           <a
             className={
@@ -178,21 +149,20 @@ const Navbar = () => {
             href="/about/"
             data-bs-toggle="dropdown"
           >
-            About
-            {/* Dropdown Arrow */}
+            {t('nav.about.title')}
             <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
               expand_more
             </span>
           </a>
           <div className="dropdown-menu">
             <Link href="/about/get-start/" className="dropdown-item">
-              Get Start
+              {t('nav.about.getStart')}
             </Link>
             <Link href="/about/domain-dumper/" className="dropdown-item">
-              DomainDumper
+              {t('nav.about.domainDumper')}
             </Link>
             <Link href="/about/what-we-do/" className="dropdown-item">
-              What we do?
+              {t('nav.about.whatWeDo')}
             </Link>
           </div>
         </li>
@@ -206,8 +176,7 @@ const Navbar = () => {
             href="/support/"
             data-bs-toggle="dropdown"
           >
-            Support
-            {/* Dropdown Arrow */}
+            {t('nav.support.title')}
             <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
               expand_more
             </span>
@@ -217,72 +186,47 @@ const Navbar = () => {
               href="/support/open-support-ticket/"
               className="dropdown-item"
             >
-              Open Support Ticket
+              {t('nav.support.openTicket')}
             </Link>
             <Link href="/support/api-documents/" className="dropdown-item">
-              API Documents
+              {t('nav.support.apiDocs')}
             </Link>
             <Link href="/support/knowledgebase/" className="dropdown-item">
-              Knowledgebase
+              {t('nav.support.knowledgebase')}
             </Link>
             <Link href="/support/payment-methods" className="dropdown-item">
-              Payment methods
+              {t('nav.support.paymentMethods')}
             </Link>
             <Link href="/support/contact-us/" className="dropdown-item">
-              Contact us
+              {t('nav.support.contactUs')}
             </Link>
           </div>
         </li>
       </ul>
       <ul className="navbar-nav ms-xl-auto">
         <li className="nav-item dropdown mb-3 mb-lg-0">
-          <a
-            className={
-              router.pathname.startsWith("/more")
-                ? "nav-link dropdown-arrow active"
-                : "nav-link dropdown-arrow"
-            }
+          <a className={router.pathname.startsWith("/more") ? "nav-link dropdown-arrow active" : "nav-link dropdown-arrow"}
             href="#"
             data-bs-toggle="dropdown"
           >
-            {isLoggedIn ? <>Hi, {userData.firstname}!</> : <>Account</>}
-
-            {/* Dropdown Arrow */}
-            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
-              expand_more
-            </span>
+            {isLoggedIn ? t('nav.account.greeting', { name: userData.firstname }) : t('nav.account.title')}
+            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">expand_more</span>
           </a>
           <div className="dropdown-menu dropdown-menu-end">
             {isLoggedIn ? (
               <>
-                <Link href="/dashboard/" className="dropdown-item">
-                  Dashboard
-                </Link>
-                <Link href="/dashboard/account-details/" className="dropdown-item">
-                  Account Details
-                </Link>
-                <Link href="/dashboard/account-details/" className="dropdown-item">
-                Email History
-                </Link>
+                <Link href="/dashboard/" className="dropdown-item">{t('nav.account.dashboard')}</Link>
+                <Link href="/dashboard/account-details/" className="dropdown-item">{t('nav.account.accountDetails')}</Link>
+                <Link href="/dashboard/account-details/" className="dropdown-item">{t('nav.account.emailHistory')}</Link>
                 <div className="dropdown-divider"></div>
-                <Link href="/auth/login/" className="dropdown-item">
-                  Change Password
-                </Link>
-                <button onClick={logout} className="dropdown-item">
-                  Logout
-                </button>
+                <Link href="/auth/login/" className="dropdown-item">{t('nav.account.changePassword')}</Link>
+                <button onClick={logout} className="dropdown-item">{t('nav.account.logout')}</button>
               </>
             ) : (
               <>
-                <Link href="/auth/login/" className="dropdown-item">
-                  Login
-                </Link>
-                <Link href="/auth/register/" className="dropdown-item">
-                  Register
-                </Link>
-                <Link href="/auth/forgot-password" className="dropdown-item">
-                  Forget password?
-                </Link>
+                <Link href="/auth/login/" className="dropdown-item">{t('nav.account.login')}</Link>
+                <Link href="/auth/register/" className="dropdown-item">{t('nav.account.register')}</Link>
+                <Link href="/auth/forgot-password" className="dropdown-item">{t('nav.account.forgotPassword')}</Link>
               </>
             )}
           </div>
@@ -292,5 +236,6 @@ const Navbar = () => {
       </ul>
     </>
   );
-}
+};
+
 export default Navbar;

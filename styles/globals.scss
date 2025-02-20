@@ -230,3 +230,24 @@
   }
 }
 
+// Add these styles to your existing CSS
+.nav-item .nav-link svg {
+  transition: transform 0.3s ease;
+}
+
+.nav-item .nav-link:hover svg {
+  transform: rotate(15deg);
+}
+
+[data-bs-theme="dark"] {
+  .nav-item .nav-link svg {
+    stroke: rgba(255, 255, 255, 0.85);
+  }
+}
+
+[data-bs-theme="light"] {
+  .nav-item .nav-link svg {
+    stroke: rgba(0, 0, 0, 0.85);
+  }
+}
+

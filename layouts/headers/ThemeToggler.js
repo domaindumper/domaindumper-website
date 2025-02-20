@@ -1,22 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
+import styles from './ThemeToggler.module.scss';
 
 const ThemeToggler = () => {
   const [theme, setTheme] = useState('light');
   const [mounted, setMounted] = useState(false);
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     setMounted(true);
-    const initializeTheme = () => {
-      const storedTheme = localStorage.getItem('theme');
-      if (storedTheme) {
-        return storedTheme;
-      }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-
-    const initialTheme = initializeTheme();
-    setTheme(initialTheme);
-    document.documentElement.setAttribute('data-bs-theme', initialTheme);
+    const storedTheme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setTheme(storedTheme);
+    document.documentElement.setAttribute('data-bs-theme', storedTheme);
   }, []);
 
   useEffect(() => {
@@ -26,58 +22,39 @@ const ThemeToggler = () => {
     }
   }, [theme, mounted]);
 
-  const handleThemeChange = (newTheme) => {
-    if (newTheme === 'auto') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      setTheme(systemTheme);
-    } else {
-      setTheme(newTheme);
-    }
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
   if (!mounted) return null;
 
   return (
-    <li className="nav-item dropdown theme-toggler">
+    <li className="nav-item">
       <button
-        className="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
-        id="bd-theme"
-        type="button"
-        aria-expanded="false"
-        data-bs-toggle="dropdown"
-        data-bs-display="static"
-        aria-label={`Toggle theme (${theme})`}
+        className={`nav-link btn btn-link p-0 ${styles.themeToggler}`}
+        onClick={toggleTheme}
+        aria-label={t(`theme.${theme}`)}
       >
-        <span className="material-symbols-rounded theme-icon-active">
-          {theme === 'dark' ? 'dark_mode' : 'light_mode'}
-        </span>
-        <span className="d-lg-none ms-2">Toggle theme</span>
+        <div className={styles.iconWrapper}>
+          {theme === 'dark' ? (
+            <svg className={styles.sunIcon} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line className={styles.ray} x1="12" y1="1" x2="12" y2="3"/>
+              <line className={styles.ray} x1="12" y1="21" x2="12" y2="23"/>
+              <line className={styles.ray} x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line className={styles.ray} x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line className={styles.ray} x1="1" y1="12" x2="3" y2="12"/>
+              <line className={styles.ray} x1="21" y1="12" x2="23" y2="12"/>
+              <line className={styles.ray} x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line className={styles.ray} x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          ) : (
+            <svg className={styles.moonIcon} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          )}
+        </div>
       </button>
-
-      <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
-        {[
-          { value: 'light', icon: 'light_mode', label: 'Light' },
-          { value: 'dark', icon: 'dark_mode', label: 'Dark' },
-          { value: 'auto', icon: 'brightness_auto', label: 'Auto' }
-        ].map(({ value, icon, label }) => (
-          <li key={value}>
-            <button
-              className={`dropdown-item d-flex align-items-center ${theme === value ? 'active' : ''}`}
-              onClick={() => handleThemeChange(value)}
-              type="button"
-              aria-pressed={theme === value}
-            >
-              <span className="material-symbols-rounded me-2 opacity-50">
-                {icon}
-              </span>
-              {label}
-              {theme === value && (
-                <span className="material-symbols-rounded ms-auto">check</span>
-              )}
-            </button>
-          </li>
-        ))}
-      </ul>
     </li>
   );
 };

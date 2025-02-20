@@ -1,0 +1,88 @@
+.themeToggler {
+  position: relative;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.sunIcon {
+  animation: rotateSun 0.5s ease-in-out;
+
+  .ray {
+    animation: rayScale 0.5s ease-in-out;
+    transform-origin: center;
+  }
+
+  @for $i from 1 through 8 {
+    .ray:nth-child(#{$i + 1}) {
+      animation-delay: $i * 0.05s;
+    }
+  }
+}
+
+.moonIcon {
+  animation: scaleMoon 0.5s ease-in-out;
+}
+
+@keyframes rotateSun {
+  0% {
+    transform: rotate(-180deg) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rayScale {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleMoon {
+  0% {
+    transform: translateX(20px) rotate(90deg) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+:global([data-bs-theme="dark"]) {
+  .themeToggler {
+    svg {
+      stroke: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+:global([data-bs-theme="light"]) {
+  .themeToggler {
+    svg {
+      stroke: rgba(0, 0, 0, 0.85);
+    }
+  }
+}

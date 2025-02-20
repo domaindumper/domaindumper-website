@@ -57,5 +57,64 @@
     "en": "English",
     "hi": "हिंदी",
     "select": "भाषा चुनें"
+  },
+  "nav": {
+    "domain": {
+      "title": "डोमेन",
+      "overview": "अवलोकन",
+      "domainData": "डोमेन डेटा",
+      "features": "सभी सुविधाएं",
+      "services": "डोमेन की सभी सेवाएं",
+      "allRegistered": "सभी पंजीकृत डोमेन",
+      "newlyRegistered": "नए पंजीकृत डोमेन",
+      "expiredDomains": "समाप्त डोमेन सूची",
+      "deletedDomains": "हटाए गए डोमेन सूची",
+      "checkAvailability": "डोमेन उपलब्धता जांचें",
+      "aiSuggestions": "AI डोमेन नाम सुझाव"
+    },
+    "tlds": {
+      "title": "टीएलडी",
+      "fromAtoZ": "A-Z से टीएलडी",
+      "categories": "टीएलडी श्रेणियां"
+    },
+    "registrars": {
+      "title": "रजिस्ट्रार",
+      "allRegistrars": "सभी डोमेन रजिस्ट्रार",
+      "tldsOffered": "प्रस्तावित टीएलडी",
+      "cheapestRegistration": "सबसे सस्ता डोमेन पंजीकरण",
+      "bestValue": "सर्वश्रेष्ठ 3 वर्ष मूल्य"
+    },
+    "pricing": "मूल्य निर्धारण",
+    "about": {
+      "title": "हमारे बारे में",
+      "getStart": "शुरू करें",
+      "domainDumper": "डोमेनडम्पर",
+      "whatWeDo": "हम क्या करते हैं?"
+    },
+    "support": {
+      "title": "सहायता",
+      "openTicket": "सपोर्ट टिकट खोलें",
+      "apiDocs": "API दस्तावेज़",
+      "knowledgebase": "ज्ञानकोष",
+      "paymentMethods": "भुगतान विधियां",
+      "contactUs": "संपर्क करें"
+    },
+    "account": {
+      "title": "खाता",
+      "greeting": "नमस्ते, {{name}}!",
+      "dashboard": "डैशबोर्ड",
+      "accountDetails": "खाता विवरण",
+      "emailHistory": "ईमेल इतिहास",
+      "changePassword": "पासवर्ड बदलें",
+      "logout": "लॉग आउट",
+      "login": "लॉग इन",
+      "register": "रजिस्टर करें",
+      "forgotPassword": "पासवर्ड भूल गए?"
+    }
+  },
+  "theme": {
+    "light": "डार्क मोड पर स्विच करें",
+    "dark": "लाइट मोड पर स्विच करें",
+    "system": "सिस्टम थीम"
   }
 }

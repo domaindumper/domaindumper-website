@@ -54,5 +54,64 @@
     "en": "English",
     "hi": "हिंदी",
     "select": "Select Language"
+  },
+  "nav": {
+    "domain": {
+      "title": "Domain",
+      "overview": "Overview",
+      "domainData": "Domain Data",
+      "features": "Full list of features",
+      "services": "Domain's All Services",
+      "allRegistered": "All registered domains",
+      "newlyRegistered": "Newly registered domains",
+      "expiredDomains": "Expired domains list",
+      "deletedDomains": "Deleted domains list",
+      "checkAvailability": "Check domain availability",
+      "aiSuggestions": "AI domain name suggestions"
+    },
+    "tlds": {
+      "title": "TLDs",
+      "fromAtoZ": "TLDs From A-Z",
+      "categories": "TLDs Categories"
+    },
+    "registrars": {
+      "title": "Registrars",
+      "allRegistrars": "All domains registrars",
+      "tldsOffered": "TLDs Offered",
+      "cheapestRegistration": "Cheapest domain registration",
+      "bestValue": "Best 3 Year Value"
+    },
+    "pricing": "Pricing",
+    "about": {
+      "title": "About",
+      "getStart": "Get Started",
+      "domainDumper": "DomainDumper",
+      "whatWeDo": "What we do?"
+    },
+    "support": {
+      "title": "Support",
+      "openTicket": "Open Support Ticket",
+      "apiDocs": "API Documents",
+      "knowledgebase": "Knowledgebase",
+      "paymentMethods": "Payment methods",
+      "contactUs": "Contact us"
+    },
+    "account": {
+      "title": "Account",
+      "greeting": "Hi, {{name}}!",
+      "dashboard": "Dashboard",
+      "accountDetails": "Account Details",
+      "emailHistory": "Email History",
+      "changePassword": "Change Password",
+      "logout": "Logout",
+      "login": "Login",
+      "register": "Register",
+      "forgotPassword": "Forgot password?"
+    }
+  },
+  "theme": {
+    "light": "Switch to dark mode",
+    "dark": "Switch to light mode",
+    "system": "System Theme"
   }
 }
