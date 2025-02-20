@@ -1,23 +1,31 @@
 // import Swiper core and required modules
-import React from 'react'
-import { Navigation, A11y } from 'swiper'
-import 'swiper/css'
+import React, { useEffect, useState } from 'react';
+import { Navigation, A11y, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import TestimonialsDefault from './TestimonialDefault'
+import TestimonialsDefault from './TestimonialDefault';
 
-export const brandAirbnb = '/img/partners/airbnb-dark.svg'
-export const brandHubspot = '/img/partners/hubspot-dark.svg'
-export const brandForbes = '/img/partners/forbes-dark.svg'
-export const brandFitbit = '/img/partners/fitbit-dark.svg'
+export const brandAirbnb = '/img/partners/airbnb-dark.svg';
+export const brandHubspot = '/img/partners/hubspot-dark.svg';
+export const brandForbes = '/img/partners/forbes-dark.svg';
+export const brandFitbit = '/img/partners/fitbit-dark.svg';
 
-export const hubspotAvatar = '/img/avatars/female/1.jpg'
-export const fitbitAvatar = '/img/avatars/male/1.jpg'
-export const forbesAvatar = '/img/avatars/female/2.jpg'
-export const airbnbAvatar = '/img/avatars/male/2.jpg'
+export const hubspotAvatar = '/img/avatars/female/1.jpg';
+export const fitbitAvatar = '/img/avatars/male/1.jpg';
+export const forbesAvatar = '/img/avatars/female/2.jpg';
+export const airbnbAvatar = '/img/avatars/male/2.jpg';
+
 export default function TestimonialsSlider() {
   const prevRef = React.useRef(null);
   const nextRef = React.useRef(null);
+
+  if (typeof window === 'undefined') {
+    return null; // Return null on server-side
+  }
+
   return (
     <div className='position-relative swiper-custom'>
       <Swiper
@@ -28,27 +36,29 @@ export default function TestimonialsSlider() {
           swiper.navigation.update();
         }}
         // install Swiper modules
-        modules={[Navigation, A11y]}
+        modules={[Navigation, A11y, Pagination]}
         spaceBetween={30}
         autoHeight={true}
         breakpoints={
           { 640: { slidesPerView: 1, spaceBetween: 20 }, 768: { slidesPerView: 2, spaceBetween: 32 } }
         }
+        navigation
+        pagination={{ clickable: true }}
       >
         <SwiperSlide>
-        <TestimonialsDefault userName="Emily Doe" brandLogo={brandHubspot} profilePic={hubspotAvatar} userPost="Senior developer" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”"/>
+          <TestimonialsDefault userName="Emily Doe" brandLogo={brandHubspot} profilePic={hubspotAvatar} userPost="Senior developer" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”"/>
         </SwiperSlide>
 
         <SwiperSlide>
-        <TestimonialsDefault userName="Mark Otto" brandLogo={brandAirbnb} profilePic={airbnbAvatar} userPost="Senior developer" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”"/>
+          <TestimonialsDefault userName="Mark Otto" brandLogo={brandAirbnb} profilePic={airbnbAvatar} userPost="Senior developer" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”"/>
         </SwiperSlide>
 
         <SwiperSlide>
-        <TestimonialsDefault userName="Nikita Millner" brandLogo={brandForbes} profilePic={forbesAvatar} userPost="Senior developer" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”"/>
+          <TestimonialsDefault userName="Nikita Millner" brandLogo={brandForbes} profilePic={forbesAvatar} userPost="Senior developer" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”"/>
         </SwiperSlide>
 
         <SwiperSlide>
-        <TestimonialsDefault userName="Ruben Diaz" brandLogo={brandFitbit} profilePic={fitbitAvatar} userPost="Senior developer" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”"/>
+          <TestimonialsDefault userName="Ruben Diaz" brandLogo={brandFitbit} profilePic={fitbitAvatar} userPost="Senior developer" comment="“ We were looking for an innovation partner that could be provide all the components that we needed. SaaS, with its abilities was a good match.”"/>
         </SwiperSlide>
 
         <div slot='container-end' className='d-flex align-items-center position-absolute end-0 top-0 z-index-2 me-3 mt-n1'>
@@ -60,7 +70,6 @@ export default function TestimonialsSlider() {
           </div>
         </div>
       </Swiper>
-
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import Head from "next/head";
+import { useState } from 'react';
+import Head from 'next/head';
 import "material-symbols";
 import Link from "next/link";
 import FeatureIconDefault from "@components/features/feature-icons/FeatureIconDefault";
@@ -19,9 +20,10 @@ import { useSite } from '@/context/SiteContext';
 import { useAuth } from '@/context/AuthContext';
 import { formatPageTitle } from '@/utils/formatters';
 
-export default function Index() {
+export default function Home() {
   const { siteInfo } = useSite();
   const { isLoggedIn, userData } = useAuth();
+  const [isYearly, setIsYearly] = useState(true);
 
   console.log(userData);
   return (
@@ -285,26 +287,35 @@ export default function Index() {
         </div>
       </section>
       <section className="position-relative overflow-hidden">
-        <div className="position-absolute start-0 bottom-0 w-100 h-50 bg-body-tertiary"></div>
         <div className="container py-9 py-lg-11 position-relative">
-          <div className="row mb-5 mb-lg-7">
-            <div className="col-lg-8 mx-auto text-center">
-              <h5 className="mb-4">Pay as you go</h5>
-              <h2 className="display-5 mb-0">Simple pricing plan for you</h2>
+          <div className="row justify-content-center mb-7 mb-lg-9">
+            <div className="col-12 col-md-10 col-lg-8 text-center">
+              <h2 className="display-5 mb-4">Choose Your Plan</h2>
+              <p className="lead mb-5">Select the perfect plan for your domain management needs</p>
+              
+              {/* Pricing Toggle */}
+              <div className="d-flex align-items-center justify-content-center mb-5">
+                <span className={`me-3 ${!isYearly ? 'text-primary fw-semibold' : ''}`}>Monthly</span>
+                <div className="form-check form-switch mb-0">
+                  <input 
+                    className="form-check-input" 
+                    type="checkbox" 
+                    id="pricingToggle" 
+                    checked={isYearly}
+                    onChange={() => setIsYearly(!isYearly)}
+                  />
+                  <label className="form-check-label" htmlFor="pricingToggle">
+                    <span className="visually-hidden">Toggle pricing</span>
+                  </label>
+                </div>
+                <span className={`ms-3 ${isYearly ? 'text-primary fw-semibold' : ''}`}>
+                  Yearly <span className="badge bg-success ms-2">Save up to 20%</span>
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="row mb-7">
-            <PricingDefault />
-          </div>
-          <div className="text-center">
-            <Link href="/pricing">
-              Learn More about Pricing{" "}
-              <span className="material-symbols-rounded align-middle ms-1">
-                arrow_forward
-              </span>
-            </Link>
-          </div>
+          <PricingDefault isYearly={isYearly} />
         </div>
       </section>
       <section className="position-relative">
@@ -329,6 +340,6 @@ export default function Index() {
     </>
   );
 }
-Index.getLayout = function getLayout(page) {
+Home.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
