@@ -19,6 +19,84 @@
 @import "./components/footer";  // Add this line
 @import "./components/pricing";
 
+:root {
+  --font-primary: 'Noto Sans', 'Noto Sans Devanagari', sans-serif;
+  --font-mono: 'Chivo Mono', monospace;
+  --font-sans: 'Hanken Grotesk', sans-serif;
+  --font-serif: 'Libre Baskerville', serif;
+  --font-devanagari: 'Noto Sans Devanagari', sans-serif;
+}
+
+html {
+  font-family: var(--font-primary);
+}
+
+// Fix Hindi text alignment and rendering
+[lang="hi"] {
+  font-family: 'Noto Sans Devanagari', var(--font-primary);
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  
+  // Adjust font-size for better readability
+  .nav-link,
+  .dropdown-item {
+    font-size: 1.05rem;
+  }
+  
+  // Fix alignment in buttons
+  .btn {
+    line-height: 1.5;
+  }
+  
+  // Fix dropdown menu alignment
+  .dropdown-menu {
+    min-width: max-content;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+// Hindi language specific styles
+[lang="hi"] {
+  font-family: var(--font-devanagari);
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-devanagari);
+    font-weight: 600;
+  }
+
+  .nav-link,
+  .dropdown-item {
+    font-family: var(--font-devanagari);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    font-family: var(--font-devanagari);
+    line-height: 1.5;
+  }
+}
+
+// Maintain monospace font where needed
+code, pre, kbd, .font-mono {
+  font-family: var(--font-mono);
+}
+
+// Maintain serif font where needed
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+// Ensure consistent text height
+.nav-item,
+.dropdown-item {
+  display: flex;
+  align-items: center;
+}
+
 // Default (mobile first)
 .logo-light, .logo-dark {
   width: 80px;

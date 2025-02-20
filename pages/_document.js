@@ -3,13 +3,19 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 class MyDocument extends Document {
     render() {
         return (
-            <Html lang='en'>
+            <Html>
                 <Head>
                     <meta charSet="utf-8" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                    {/* Existing fonts */}
                     <link 
                         href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,300;0,400;1,400&family=Hanken+Grotesk:wght@100..900&family=Libre+Baskerville:ital@0;1&display=swap" 
+                        rel="stylesheet"
+                    />
+                    {/* Add Noto Sans Devanagari for Hindi support */}
+                    <link 
+                        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" 
                         rel="stylesheet"
                     />
                 </Head>
