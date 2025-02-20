@@ -123,7 +123,7 @@ export default function PricingDefault({ isYearly }) {
               </ul>
               <a 
                 href={plan.btnLink}
-                className={`btn ${plan.featured ? 'btn-light' : 'btn-primary'} w-100`}
+                className={`btn ${plan.featured ? 'btn-featured' : 'btn-primary'} w-100`}
               >
                 <span>{plan.btnText}</span>
               </a>
