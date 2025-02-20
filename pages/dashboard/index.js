@@ -8,6 +8,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 import ProtectedRoute from '@components/protectedRoute';
+import { getCommonPageProps } from '@/lib/getCommonPageProps';
 
 const Dashboard = () => {
   const { siteInfo } = useContext(SiteContext);
@@ -183,6 +184,11 @@ const Dashboard = () => {
 };
 Dashboard.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
+};
+
+export const getServerSideProps = async (context) => {
+  const commonProps = await getCommonPageProps();
+  return commonProps;
 };
 
 export default Dashboard;

@@ -1,122 +1,111 @@
-import CtaDefault from "@components/call-to-actions/CtaDefault";
-import DividerBottom from "@components/dividers/DividerBottom";
+import Head from "next/head";
+import { useSite } from '@/context/SiteContext';
+import { getCommonPageProps } from '@/lib/getCommonPageProps';
+import Layout from "@layouts/LayoutDefault";
+import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
 import FeatureIconWithTitle from "@components/features/feature-icons/FeatureIconWithTitle";
 import FeatureImageLeft1 from "@components/features/feature-image/FeatureImageLeft1";
-import FeatureImageLeft2 from "@components/features/feature-image/FeatureImageLeft2";
 import FeatureImageRight1 from "@components/features/feature-image/FeatureImageRight1";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
-import Layout from "@layouts/LayoutDefault";
-import Head from "next/head";
-import { useContext } from 'react';
-import SiteContext from '@lib/siteContext';
+import CtaDefault from "@components/call-to-actions/CtaDefault";
 
-export default function Features() {
-  const { siteInfo } = useContext(SiteContext);
+export const getStaticProps = getCommonPageProps;
+
+export default function DomainsPage({ pageProps }) {
+  const { siteInfo } = useSite();
+
   return (
     <>
       <Head>
-        <title>{siteInfo.title} | domains</title>
+        <title>{`Domain Management | ${siteInfo.title}`}</title>
+        <meta 
+          name="description" 
+          content={`Manage your domains efficiently with ${siteInfo.title}. Track, renew, and optimize your domain portfolio.`}
+        />
       </Head>
       <PageHeaderDefault
-        pageTitle="Features"
-        pageSubtitle="Learn about core features of Domaindumper."
+        pageTitle="Domain Management"
+        pageSubtitle="Simplify your domain portfolio management"
       />
       <section className="position-relative">
-        <div className="container pb-9 pb-lg-11 position-relative mt-n12">
+        <div className="container pb-9 pb-lg-11 position-relative">
           <FeatureImageLeft1 />
         </div>
       </section>
       <section className="position-relative">
-        <div className="container pb-9 pb-lg-11">
-          <FeatureImageRight1 />
-        </div>
-      </section>
-      <section className="position-relative bg-body-tertiary">
         <div className="container py-9 py-lg-11 position-relative">
-          <FeatureImageLeft2 />
-        </div>
-      </section>
-      <section className="position-relative">
-        <div className="container py-9 py-lg-11 position-relative">
-          <h2 className="display-6 text-center mb-6 mb-lg-9">More features</h2>
+          <h2 className="display-6 text-center mb-6 mb-lg-9">Domain Features</h2>
           <div className="row justify-content-around">
             <div className="col-sm-6 col-md-4 col-xl-3 mb-6" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    insights
+                    domain_verification
                   </span>
                 }
                 color="primary"
-                title="Analytics"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="Domain Monitoring"
+                description="Track domain expiration dates, DNS changes, and domain health status in real-time."
               />
             </div>
             <div className="col-sm-6 col-md-4 col-xl-3 mb-6" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    workspaces
+                    dns
                   </span>
                 }
                 color="success"
-                title="Collaboration"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="DNS Management"
+                description="Easy DNS management with templates and bulk update capabilities."
               />
             </div>
             <div className="col-sm-6 col-md-4 col-xl-3 mb-6" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    smart_toy
+                    autorenew
                   </span>
                 }
                 color="warning"
-                title="Automation"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="Auto Renewal"
+                description="Never miss a domain renewal with automated renewal management."
               />
             </div>
             <div className="col-12 d-none d-md-block"></div>
-            <div
-              className="col-sm-6 col-md-4 col-xl-3 mb-6 mb-md-0"
-              data-aos="fade-up"
-            >
+            <div className="col-sm-6 col-md-4 col-xl-3 mb-6 mb-md-0" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    verified_user
+                    security
                   </span>
                 }
                 color="danger"
-                title="Secure & Reliable"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="Domain Security"
+                description="Advanced security features including DNSSEC and registry locks."
               />
             </div>
-            <div
-              className="col-sm-6 col-md-4 col-xl-3 mb-6 mb-sm-0"
-              data-aos="fade-up"
-            >
+            <div className="col-sm-6 col-md-4 col-xl-3 mb-6 mb-sm-0" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    credit_score
+                    analytics
                   </span>
                 }
                 color="secondary"
-                title="Affordable"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="Portfolio Analytics"
+                description="Get insights into your domain portfolio performance and value."
               />
             </div>
             <div className="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    contact_support
+                    support_agent
                   </span>
                 }
                 color="info"
-                title="24/7 Suupport"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="24/7 Support"
+                description="Expert domain support available around the clock."
               />
             </div>
           </div>
@@ -125,15 +114,17 @@ export default function Features() {
       <section className="position-relative bg-body-tertiary">
         <div className="container py-9 py-lg-11">
           <CtaDefault
-            link="Get started today"
-            heading="Get started today"
-            subheading="Join over 25000+ customers worldwide"
+            link="Start Managing"
+            action="/domains/search"
+            heading="Take Control of Your Domains"
+            subheading="Join thousands of domain professionals using DomainDumper"
           />
         </div>
       </section>
     </>
   );
 }
-Features.getLayout = function getLayout(page) {
+
+DomainsPage.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };

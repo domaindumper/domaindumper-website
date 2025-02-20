@@ -1,5 +1,3 @@
-
-
 @import "../node_modules/bootstrap/scss/functions";
 @import "./custom/variables/variables";
 @import "../node_modules/bootstrap/scss/variables";
@@ -15,4 +13,34 @@
 @import "./custom/utilities/root";
 @import "./custom/utilities/typography";
 @import "./custom/components/components";
+
+// Components
+@import "./components/theme-toggler";  // Add this line
+
+// Default (mobile first)
+.logo-light, .logo-dark {
+  width: 80px;
+  transition: width 0.3s ease;
+}
+
+// Tablet
+@media (min-width: 768px) {
+  .logo-light, .logo-dark {
+    width: 100px;
+  }
+}
+
+// Desktop
+@media (min-width: 1200px) {
+  .logo-light, .logo-dark {
+    width: 120px;
+  }
+}
+
+// Large Desktop
+@media (min-width: 1400px) {
+  .logo-light, .logo-dark {
+    width: 140px;
+  }
+}
 

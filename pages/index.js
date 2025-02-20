@@ -15,19 +15,20 @@ export const airbnbAvatar = "/img/avatars/male/1.jpg";
 import FeatureIconVertical from "@components/features/feature-icons/FeatureIconVertical";
 import TestimonialBoxed from "@components/testimonials/TestimonialBoxed";
 import PricingDefault from "@components/pricing-tables/PricingDefault";
-import { useContext } from "react";
-import SiteContext from "@lib/siteContext";
-import {useAuth} from "@lib/Auth/AuthContext";
+import { useSite } from '@/context/SiteContext';
+import { useAuth } from '@/context/AuthContext';
+import { formatPageTitle } from '@/utils/formatters';
 
 export default function Index() {
-  const { siteInfo } = useContext(SiteContext);
+  const { siteInfo } = useSite();
   const { isLoggedIn, userData } = useAuth();
 
   console.log(userData);
   return (
     <>
       <Head>
-        <title>{siteInfo.title} | Home </title>
+        <title>{formatPageTitle('Home', siteInfo?.title)}</title>
+        <meta name="description" content="DomainDumper - Your Domain Management Solution" />
       </Head>
       <HeroDefault />
       <section className="position-relative">

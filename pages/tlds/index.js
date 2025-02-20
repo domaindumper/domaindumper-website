@@ -1,122 +1,100 @@
-import CtaDefault from "@components/call-to-actions/CtaDefault";
-import DividerBottom from "@components/dividers/DividerBottom";
-import FeatureIconWithTitle from "@components/features/feature-icons/FeatureIconWithTitle";
-import FeatureImageLeft1 from "@components/features/feature-image/FeatureImageLeft1";
-import FeatureImageLeft2 from "@components/features/feature-image/FeatureImageLeft2";
-import FeatureImageRight1 from "@components/features/feature-image/FeatureImageRight1";
-import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
+import Head from 'next/head';
+import { useSite } from '@/context/SiteContext';
+import { getCommonPageProps } from '@/lib/getCommonPageProps';
 import Layout from "@layouts/LayoutDefault";
-import Head from "next/head";
-import { useContext } from 'react';
-import SiteContext from '@lib/siteContext';
+import PageHeaderDefault from "@components/page-headers/PageHeaderDefault";
+import CtaDefault from "@components/call-to-actions/CtaDefault";
+import FeatureIconWithTitle from "@components/features/feature-icons/FeatureIconWithTitle";
 
-export default function Features() {
-  const { siteInfo } = useContext(SiteContext);
+export const getStaticProps = getCommonPageProps;
+
+export default function TLDsPage() {
+  const { siteInfo } = useSite();
+
   return (
     <>
       <Head>
-        <title>{siteInfo.title} | TLDs and gTLD</title>
+        <title>{`Domain TLDs | ${siteInfo.title}`}</title>
+        <meta name="description" content="Explore our comprehensive list of domain TLDs (Top Level Domains) and find the perfect extension for your website." />
       </Head>
       <PageHeaderDefault
-        pageTitle="Features"
-        pageSubtitle="Learn about core features of Domaindumper."
+        pageTitle="Domain TLDs"
+        pageSubtitle="Explore available Top Level Domains for your next project"
       />
       <section className="position-relative">
-        <div className="container pb-9 pb-lg-11 position-relative mt-n12">
-          <FeatureImageLeft1 />
-        </div>
-      </section>
-      <section className="position-relative">
-        <div className="container pb-9 pb-lg-11">
-          <FeatureImageRight1 />
-        </div>
-      </section>
-      <section className="position-relative bg-body-tertiary">
         <div className="container py-9 py-lg-11 position-relative">
-          <FeatureImageLeft2 />
-        </div>
-      </section>
-      <section className="position-relative">
-        <div className="container py-9 py-lg-11 position-relative">
-          <h2 className="display-6 text-center mb-6 mb-lg-9">More features</h2>
           <div className="row justify-content-around">
             <div className="col-sm-6 col-md-4 col-xl-3 mb-6" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    insights
+                    public
                   </span>
                 }
                 color="primary"
-                title="Analytics"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title=".com Domains"
+                description="The most popular and widely recognized domain extension for commercial websites worldwide."
               />
             </div>
             <div className="col-sm-6 col-md-4 col-xl-3 mb-6" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    workspaces
+                    business
                   </span>
                 }
                 color="success"
-                title="Collaboration"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title=".org Domains"
+                description="Perfect for organizations, non-profits, and community projects seeking global recognition."
               />
             </div>
             <div className="col-sm-6 col-md-4 col-xl-3 mb-6" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    smart_toy
+                    network_node
                   </span>
                 }
                 color="warning"
-                title="Automation"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title=".net Domains"
+                description="Ideal for network, technology, and infrastructure-related websites and services."
               />
             </div>
             <div className="col-12 d-none d-md-block"></div>
-            <div
-              className="col-sm-6 col-md-4 col-xl-3 mb-6 mb-md-0"
-              data-aos="fade-up"
-            >
+            <div className="col-sm-6 col-md-4 col-xl-3 mb-6 mb-md-0" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    verified_user
+                    domain
                   </span>
                 }
                 color="danger"
-                title="Secure & Reliable"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="Country TLDs"
+                description="Establish local presence with country-specific domain extensions like .uk, .de, .fr"
               />
             </div>
-            <div
-              className="col-sm-6 col-md-4 col-xl-3 mb-6 mb-sm-0"
-              data-aos="fade-up"
-            >
+            <div className="col-sm-6 col-md-4 col-xl-3 mb-6 mb-sm-0" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    credit_score
+                    new_releases
                   </span>
                 }
                 color="secondary"
-                title="Affordable"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="New TLDs"
+                description="Explore innovative domain extensions like .app, .io, .dev for modern web presence."
               />
             </div>
             <div className="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up">
               <FeatureIconWithTitle
                 icon={
                   <span className="material-symbols-rounded align-middle fs-3">
-                    contact_support
+                    shield
                   </span>
                 }
                 color="info"
-                title="24/7 Suupport"
-                description="Lorem ipsum dolor sit amet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                title="Premium TLDs"
+                description="Stand out with premium domain extensions perfect for your brand identity."
               />
             </div>
           </div>
@@ -125,15 +103,17 @@ export default function Features() {
       <section className="position-relative bg-body-tertiary">
         <div className="container py-9 py-lg-11">
           <CtaDefault
-            link="Get started today"
-            heading="Get started today"
-            subheading="Join over 25000+ customers worldwide"
+            link="Search Domains"
+            action="/domains/search"
+            heading="Find Your Perfect Domain"
+            subheading="Start with the right domain extension for your website"
           />
         </div>
       </section>
     </>
   );
 }
-Features.getLayout = function getLayout(page) {
+
+TLDsPage.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };

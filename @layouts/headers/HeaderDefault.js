@@ -24,18 +24,22 @@ export default function HeaderDefault() {
             <Image
               src={Logo}
               layout="responsive"
-              width="704"
-              height="178"
+              width={704}
+              height={178}
               alt="DomainDumper"
+              priority
+              className="logo-image"
             />
           </div>
           <div className="logo-dark">
             <Image
               src={LogoDark}
               layout="responsive"
-              width="704"
-              height="178"
+              width={704}
+              height={178}
               alt="DomainDumper"
+              priority
+              className="logo-image"
             />
           </div>
         </Link>

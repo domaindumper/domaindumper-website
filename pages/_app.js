@@ -1,15 +1,16 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Head from "next/head";
 import NProgress from "nprogress";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "../styles/globals.scss";
 import "../styles/reset.scss";
 
-import { SiteProvider } from "@lib/siteContext";
-import { AuthProvider } from '@lib/Auth/AuthContext'; 
+import { SiteProvider, defaultSiteInfo } from '@/context/SiteContext';
+import { AuthProvider } from '@/context/AuthContext'; 
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
@@ -44,13 +45,22 @@ export default function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeError", handleStop);
     };
   }, [router]);
-  // Use the layout defined at the page level, if available
+
   const getLayout = Component.getLayout || ((page) => page);
-  return getLayout(
-    <AuthProvider>
-    <SiteProvider>
-      <Component {...pageProps} />
+  const siteInfo = pageProps.siteInfo || defaultSiteInfo;
+
+  return (
+    <SiteProvider initialSiteInfo={siteInfo}>
+      <AuthProvider>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>DomainDumper</title>
+          <meta name="description" content="DomainDumper - Domain Management Solution" />
+        </Head>
+        {getLayout(<Component {...pageProps} />)}
+      </AuthProvider>
     </SiteProvider>
-    </AuthProvider>
   );
 }
+
+export default MyApp;

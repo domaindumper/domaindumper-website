@@ -1,29 +1,36 @@
 import Layout from "@layouts/LayoutDashboard";
 import Link from "next/link";
 import Head from "next/head";
-import SiteContext from "@lib/siteContext";
+import { useSite } from '@/context/SiteContext';
+import { getCommonPageProps } from '@/lib/getCommonPageProps';
+import ProtectedRoute from '@components/protectedRoute';
 import "material-symbols";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import ProtectedRoute from '@components/protectedRoute';
-
-import React, { useEffect, useRef, useState, useContext } from "react";
-
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { API_END } from "@lib/api";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 
-const Dashboard = () => {
-  const { siteInfo } = useContext(SiteContext);
+export async function getServerSideProps(context) {
+  const commonProps = await getCommonPageProps();
+  
+  return {
+    props: {
+      ...commonProps.props
+    }
+  };
+}
+
+const AccountDetails = () => {
+  const { siteInfo } = useSite();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
-
   const [error, setError] = useState(null);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
-
   const [success, setSuccess] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
+  // Form state
   const [authToken, setAuthTokenData] = useState("");
   const [firstname, setFirstnameData] = useState("");
   const [lastname, setLastnameData] = useState("");
@@ -37,38 +44,39 @@ const Dashboard = () => {
   const [phonenumber, setPhonenumberData] = useState("");
 
   useEffect(() => {
-    // Check if user is logged in on initial render
-    const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
-    const storedUserData = localStorage.getItem("userData");
-    const storedTokenData = localStorage.getItem("authToken");
+    const initializeUserData = () => {
+      const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
+      const storedUserData = localStorage.getItem("userData");
+      const storedTokenData = localStorage.getItem("authToken");
 
-    if (storedIsLoggedIn) {
-      // Set user data to constant for using in update form
+      if (storedIsLoggedIn && storedUserData) {
+        const parsedUserData = JSON.parse(storedUserData);
+        
+        setAuthTokenData(storedTokenData);
+        setFirstnameData(parsedUserData.firstname);
+        setLastnameData(parsedUserData.lastname);
+        setCompanynameData(parsedUserData.companyname);
+        setEmailData(parsedUserData.email);
+        setAddress1Data(parsedUserData.address1);
+        setCityData(parsedUserData.city);
+        setStateData(parsedUserData.state);
+        setPostcodeData(parsedUserData.postcode);
+        setCountryData(parsedUserData.country);
+        setPhonenumberData(parsedUserData.phonenumber);
 
-      setAuthTokenData(storedTokenData);
-      setFirstnameData(JSON.parse(storedUserData).firstname);
-      setLastnameData(JSON.parse(storedUserData).lastname);
-      setCompanynameData(JSON.parse(storedUserData).companyname);
-      setEmailData(JSON.parse(storedUserData).email);
-      setAddress1Data(JSON.parse(storedUserData).address1);
-      setCityData(JSON.parse(storedUserData).city);
-      setStateData(JSON.parse(storedUserData).state);
-      setPostcodeData(JSON.parse(storedUserData).postcode);
-      setCountryData(JSON.parse(storedUserData).country);
-      setPhonenumberData(JSON.parse(storedUserData).phonenumber);
+        setIsLoggedIn(true);
+        setUserData(parsedUserData);
+      }
+    };
 
-      setIsLoggedIn(true);
-      setTimeout(() => {
-        setUserData(JSON.parse(storedUserData));
-      }, 300);
-    }
+    initializeUserData();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(API_END + "/user/update/", {
+      const response = await axios.post(`${API_END}/user/update/`, {
         authToken,
         firstname,
         lastname,
@@ -82,43 +90,24 @@ const Dashboard = () => {
         phonenumber,
       });
 
-      //console.log(response.data.Userdata);
-
       if (response.data.status === "success") {
-        const { Userdata } = response.data.Userdata;
-
-        // Update user data or a flag in local storage
-        localStorage.setItem(
-          "userData",
-          JSON.stringify(response.data.Userdata)
-        );
-
-        setUserData(JSON.parse(storedUserData));
-
-        console.log("Acccount updated successfully");
-        setSuccess("Acccount updated successfully");
-
+        localStorage.setItem("userData", JSON.stringify(response.data.Userdata));
+        setUserData(response.data.Userdata);
+        setSuccess("Account updated successfully");
         setShowSuccessMessage(true);
-        setTimeout(() => {
-          setShowSuccessMessage(false);
-        }, 3000);
-
-        // Redirect to a protected route or home page
-        // window.location.href = "/dashboard/";
+        setTimeout(() => setShowSuccessMessage(false), 3000);
       } else {
         setError(response.data.message);
         setShowErrorMessage(true);
-        setTimeout(() => {
-          setShowErrorMessage(false);
-        }, 3000);
+        setTimeout(() => setShowErrorMessage(false), 3000);
       }
     } catch (error) {
       setError(error.message);
+      setShowErrorMessage(true);
+      setTimeout(() => setShowErrorMessage(false), 3000);
     }
   };
 
-  //console.log(isLoggedIn);
-  //console.log(userData);
   return (
     <>
     <ProtectedRoute>
@@ -320,8 +309,9 @@ const Dashboard = () => {
     </>
   );
 };
-Dashboard.getLayout = function getLayout(page) {
+
+AccountDetails.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
 
-export default Dashboard;
+export default AccountDetails;

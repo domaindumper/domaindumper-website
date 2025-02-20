@@ -1,0 +1,31 @@
+.theme-toggler {
+  .dropdown-menu {
+    min-width: 200px;
+    padding: 0.5rem;
+    margin-top: 0.125rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--bs-border-color);
+    
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 0.2s ease-out;
+    }
+  }
+
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    
+    &:hover {
+      background-color: var(--bs-tertiary-bg);
+    }
+    
+    &.active {
+      background-color: var(--bs-primary);
+      color: var(--bs-white);
+    }
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1;
+  }
+}
