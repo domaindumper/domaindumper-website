@@ -4,8 +4,11 @@ import Link from "next/link";
 import axios from "axios";
 import { API_END } from "lib/api";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { useTranslation } from 'next-i18next';
 
-export default function FormSignIn() {
+const FormSignIn = () => {
+  const { t } = useTranslation('auth');
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRevealPwd, setIsRevealPwd] = useState(false);
@@ -36,8 +39,6 @@ export default function FormSignIn() {
         token,
       });
 
-       //console.log(response.data.Userdata);
-
       if (response.data.status === "success") {
         const { authToken } = response.data.authToken;
         const { Userdata } = response.data.Userdata;
@@ -50,7 +51,7 @@ export default function FormSignIn() {
         localStorage.setItem("userData", JSON.stringify(response.data.Userdata));
 
         console.log("Login successful");
-        setSuccess("Login successful");
+        setSuccess(t('login.form.success'));
         setShowSuccessMessage(true);
         setTimeout(() => {
           setShowSuccessMessage(false);
@@ -59,26 +60,27 @@ export default function FormSignIn() {
         // Redirect to a protected route or home page
         window.location.href = "/dashboard/";
       } else {
-        setError(response.data.message);
+        setError(t('login.form.errors.invalid'));
         setShowErrorMessage(true);
         setTimeout(() => {
           setShowErrorMessage(false);
         }, 3000);
       }
     } catch (error) {
-      setError(error.message);
+      setError(t('login.form.errors.generic'));
+      setShowErrorMessage(true);
     }
   };
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="login_name" className="form-label">
-          Username or Email
+          {t('login.form.emailLabel')}
         </label>
         <input
           id="login_name"
           type="email"
-          placeholder="Email address"
+          placeholder={t('login.form.emailPlaceholder')}
           className="form-control"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -89,10 +91,10 @@ export default function FormSignIn() {
       <div className="mb-3">
         <div className="d-flex justify-content-between align-items-center mb-2">
           <label htmlFor="login_password" className="form-label mb-0">
-            Password
+            {t('login.form.passwordLabel')}
           </label>
           <Link href="/auth/forgot-password" className="small">
-            Forgot Password?
+            {t('login.form.forgotPassword')}
           </Link>
         </div>
         <div className="position-relative">
@@ -102,7 +104,7 @@ export default function FormSignIn() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             id="login_password"
-            placeholder="Password"
+            placeholder={t('login.form.passwordPlaceholder')}
             className="form-control pe-5"
           />
           {/* Password icon */}
@@ -127,7 +129,7 @@ export default function FormSignIn() {
       </div>
       <div className="d-grid mb-3">
         <button type="submit" className="btn btn-primary">
-          Sign In
+          {t('login.form.signInButton')}
         </button>
         {showErrorMessage && <p className="text-danger pt-2">{error}</p>}
         {showSuccessMessage && <p className="text-success pt-2">{success}</p>}
@@ -135,3 +137,5 @@ export default function FormSignIn() {
     </form>
   );
 }
+
+export default FormSignIn;

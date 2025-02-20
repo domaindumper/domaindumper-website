@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import FormSignIn from "components/forms/SignIn";
 import Layout from "layouts/LayoutDefault";
 import Head from "next/head";
@@ -10,6 +12,7 @@ import { useAuth } from "../../context/AuthContext";
 
 export default function AuthSignIn() {
   const router = useRouter();
+  const { t } = useTranslation('auth');
   const { siteInfo } = useSite();
   const { isLoggedIn, userData, logout } = useAuth();
 
@@ -26,28 +29,30 @@ export default function AuthSignIn() {
     router.push('/');
   };
 
-  const pageTitle = `Sign In | ${siteInfo?.title || 'DomainDumper'}`;
+  const pageTitle = t('login.meta.title', { siteName: siteInfo?.title || 'DomainDumper' });
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content="Sign in to your DomainDumper account" />
+        <meta name="description" content={t('login.meta.description')} />
       </Head>
       <div className="container pt-12 pt-lg-15 pb-9 pb-lg-11">
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-5 col-xl-4">
             {isLoggedIn ? (
               <>
-                <h2 className="display-6">Hi, {userData?.fullname || 'User'}!</h2>
-                <p className="text-muted mb-4">You are already logged in.</p>
+                <h2 className="display-6">
+                  {t('login.loggedInTitle', { name: userData?.fullname || 'User' })}
+                </h2>
+                <p className="text-muted mb-4">{t('login.alreadyLoggedIn')}</p>
 
                 <p className="text-muted small mb-0">
                   <Link
                     href="/dashboard"
                     className="text-decoration-underline"
                   >
-                    Continue to Dashboard
+                    {t('login.continueLink')}
                   </Link>
                   <span className="vr mx-2 align-middle"></span>
                   <Link
@@ -55,16 +60,14 @@ export default function AuthSignIn() {
                     className="text-decoration-underline text-danger"
                     onClick={handleLogout}
                   >
-                    Logout
+                    {t('login.logoutLink')}
                   </Link>
                 </p>
               </>
             ) : (
               <>
-                <h2 className="display-6">Welcome Back!</h2>
-                <p className="text-muted mb-4">
-                  Sign in to access your account
-                </p>
+                <h2 className="display-6">{t('login.title')}</h2>
+                <p className="text-muted mb-4">{t('login.subtitle')}</p>
                 <FormSignIn />
                 <div className="mt-4">
                   <p className="text-muted small mb-0">
@@ -72,14 +75,14 @@ export default function AuthSignIn() {
                       href="/auth/forgot-password"
                       className="text-decoration-underline"
                     >
-                      Forgot Password?
+                      {t('login.forgotPassword')}
                     </Link>
                     <span className="vr mx-2 align-middle"></span>
                     <Link
                       href="/auth/register"
                       className="text-decoration-underline"
                     >
-                      Create Account
+                      {t('login.createAccount')}
                     </Link>
                   </p>
                 </div>
@@ -90,6 +93,15 @@ export default function AuthSignIn() {
       </div>
     </>
   );
+}
+
+// Add getStaticProps for translation loading
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['auth', 'common'])),
+    },
+  };
 }
 
 AuthSignIn.getLayout = function getLayout(page) {
