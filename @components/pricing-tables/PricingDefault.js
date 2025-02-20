@@ -1,86 +1,136 @@
-import ListCheck from "@components/lists/ListCheck";
+import { useState, useEffect } from 'react';
 
-export default function PricingDefault() {
+export default function PricingDefault({ isYearly }) {
+  const [animatingPrice, setAnimatingPrice] = useState(false);
+  const [prices, setPrices] = useState({});
+
+  const plans = [
+    {
+      id: 'basic',
+      name: 'Basic',
+      monthlyPrice: 29,
+      yearlyPrice: 279,
+      features: [
+        'Up to 100 domain searches/day',
+        'Basic domain analytics',
+        'Email notifications',
+        'Standard support'
+      ],
+      btnText: 'Get Basic',
+      btnLink: '/signup?plan=basic'
+    },
+    {
+      id: 'pro',
+      name: 'Professional',
+      monthlyPrice: 99,
+      yearlyPrice: 949,
+      featured: true,
+      features: [
+        'Up to 1000 domain searches/day',
+        'Advanced domain analytics',
+        'Real-time notifications',
+        'Priority support',
+        'API access'
+      ],
+      btnText: 'Get Professional',
+      btnLink: '/signup?plan=pro'
+    },
+    {
+      id: 'enterprise',
+      name: 'Enterprise',
+      monthlyPrice: 299,
+      yearlyPrice: 2869,
+      features: [
+        'Unlimited domain searches',
+        'Custom analytics dashboard',
+        'Dedicated account manager',
+        '24/7 premium support',
+        'Full API access',
+        'Custom integrations'
+      ],
+      btnText: 'Contact Sales',
+      btnLink: '/contact'
+    }
+  ];
+
+  // Initialize prices on mount and when isYearly changes
+  useEffect(() => {
+    // Start animation
+    setAnimatingPrice(true);
+
+    // Calculate new prices
+    const newPrices = plans.reduce((acc, plan) => {
+      acc[plan.id] = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
+      return acc;
+    }, {});
+
+    // Update prices after animation starts
+    const timer = setTimeout(() => {
+      setPrices(newPrices);
+      setAnimatingPrice(false);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [isYearly]);
+
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-US').format(price);
+  };
+
+  // Get current price for a plan
+  const getCurrentPrice = (plan) => {
+    return prices[plan.id] || (isYearly ? plan.yearlyPrice : plan.monthlyPrice);
+  };
+
   return (
-    <div className="row align-items-center justify-content-center">
-      <div className="col-lg-4 col-sm-10 mx-auto" data-aos="fade-up" data-aos-delay="100">
-        <div className="card mb-4 mb-lg-0 shadow-lg rounded-4 overflow-hidden">
-          <div className="px-4 py-4">
-            <h5 className="mb-2">Basic</h5>
-            <p className="mb-0 text-muted">For individuals or startup teams..</p>
-          </div>
-          <div className="card-body pt-0 pb-4 px-4">
-            <h2 className="display-5"><span className="fw-light small">US$</span> 0</h2>
-            <small className="text-muted font-monospace mb-4 d-block">Free forever</small>
-
-            <button type="button" className="w-100 btn btn-lg btn-gradient-secondary hover-lift">Get Basic Plan</button>
-
-            <ul className="list-unstyled mb-0 pt-4">
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited tasks" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="5 Projects" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited messages" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Collaborate with 5 members" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="10/GB File storage" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Calendar view" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Assignee & Due dates" />
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-4 col-sm-10 mx-auto" data-aos="fade-up">
-        <div className="card mb-4 mb-lg-0 shadow-lg rounded-4 overflow-hidden">
-          <div className="px-4 py-4">
-            <span className="badge bg-success mb-2">Best value</span>
-          
-            <h5 className="mb-2">Premium</h5>
-            <p className="text-muted mb-0">For teams that need to create project plans with confidence.</p>
-          </div>
-          <div className="card-body pt-0 pb-4 px-4">
-            <h1 className="display-5"><span className="fw-light small">US$</span> 19</h1>
-            <small className="text-muted font-monospace mb-4 d-block">Per Month</small>
-
-            <button type="button" className="w-100 btn btn-lg btn-gradient-primary hover-lift">Get Premium Plan</button>
-            <ul className="list-unstyled mb-0 pt-4">
-              <ListCheck className="d-flex align-items-center mb-3" listText="Timeline" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited dashboards" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited tasks" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited projects" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited messages" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited collaborate" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited file storage" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Calendar view" />
-              <ListCheck className="d-flex align-items-center" listText="Assignee & Due dates" />
-            </ul>
+    <div className="row g-4">
+      {plans.map((plan) => (
+        <div key={plan.id} className={`col-lg-4 col-md-6${plan.featured ? ' z-1' : ''}`}>
+          <div className={`pricing-card card h-100 border-0 shadow-lg${
+            plan.featured ? ' featured bg-primary text-white' : ''
+          }`}>
+            <div className="card-body p-5">
+              <div className="mb-4">
+                <h4 className={plan.featured ? 'text-white' : ''}>{plan.name}</h4>
+                <div className="display-5 fw-bold mb-2">
+                  <div className={`price-wrapper${animatingPrice ? ' price-animating' : ''}`}>
+                    <span className="currency">$</span>
+                    <span className="price-amount">
+                      {formatPrice(getCurrentPrice(plan))}
+                    </span>
+                    <small className={`fs-6 fw-normal ${plan.featured ? 'text-white-50' : 'text-body-secondary'}`}>
+                      /{isYearly ? 'year' : 'month'}
+                    </small>
+                  </div>
+                  {isYearly && (
+                    <div className="mt-2">
+                      <small className={`${plan.featured ? 'text-white-50' : 'text-success'}`}>
+                        Save {((plan.monthlyPrice * 12 - plan.yearlyPrice) / (plan.monthlyPrice * 12) * 100).toFixed(0)}%
+                      </small>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <ul className="list-unstyled mb-4">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="mb-3 d-flex align-items-center">
+                    <i className={`bi bi-check-circle me-2${
+                      plan.featured ? ' text-white' : ' text-success'
+                    }`}></i>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a 
+                href={plan.btnLink}
+                className={`btn ${plan.featured ? 'btn-light' : 'btn-primary'} w-100`}
+              >
+                <span>{plan.btnText}</span>
+              </a>
+            </div>
           </div>
         </div>
-
-      </div>
-      <div className="col-lg-4 col-sm-10 mx-auto" data-aos="fade-up" data-aos-delay="150">
-        <div className="card shadow-lg rounded-4 overflow-hidden">
-
-          <div className="px-4 py-4">
-            <h5 className="mb-2">Business</h5>
-            <p className="text-muted mb-0">For teams and companies that need to manage work across initiatives.</p>
-          </div>
-          <div className="card-body pt-0 pb-4 px-4">
-            <h1 className="display-5"><span className="fw-light small">US$</span> 49</h1>
-            <small className="text-muted font-monospace mb-4 d-block">Per Month</small>
-
-            <button type="button" className="w-100 btn btn-lg btn-gradient-secondary hover-lift">Get Business Plan</button>
-            <ul className="list-unstyled mb-0 pt-4">
-              <ListCheck className="d-flex align-items-center mb-3" listText="Admin Console" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Portfolios" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Goals" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Workloads" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Custom builders" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Field lock" />
-              <ListCheck className="d-flex align-items-center mb-3" listText="Unlimited Integrations" />
-              <ListCheck className="d-flex align-items-center" listText="Full access" />
-            </ul>
-          </div>
-        </div>
-
-      </div>
+      ))}
     </div>
   );
 }

@@ -15,7 +15,9 @@
 @import "./custom/components/components";
 
 // Components
-@import "./components/theme-toggler";  // Add this line
+@import "./components/theme-toggler";
+@import "./components/footer";  // Add this line
+@import "./components/pricing";
 
 // Default (mobile first)
 .logo-light, .logo-dark {
