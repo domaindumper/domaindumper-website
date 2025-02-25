@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "About DomainDumper - Your Domain Intelligence Platform",
+    "description": "Learn about DomainDumper's mission to provide comprehensive domain intelligence and TLD data"
+  },
+  "title": "About Us",
+  "subtitle": "Empowering businesses with domain intelligence",
+  "mission": {
+    "title": "Our Mission",
+    "description": "We provide comprehensive domain intelligence and TLD data to help businesses make informed decisions about their online presence."
+  },
+  "features": {
+    "domains": {
+      "title": "Domain Database",
+      "description": "Access to millions of domain records with detailed analytics and insights"
+    },
+    "tld": {
+      "title": "TLD Coverage",
+      "description": "Comprehensive data for all gTLDs and ccTLDs worldwide"
+    }
+  },
+  "stats": {
+    "domains": "Domains Tracked",
+    "tlds": "TLDs Covered",
+    "customers": "Happy Customers",
+    "uptime": "Service Uptime"
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "description": "A dedicated group of professionals committed to providing the best domain intelligence solutions"
+  },
+  "cta": {
+    "title": "Ready to get started?",
+    "description": "Join thousands of customers using DomainDumper"
+  }
+}

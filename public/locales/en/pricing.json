@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "DomainDumper | Pricing",
+    "description": "Choose the perfect plan for your domain intelligence needs"
+  },
+  "header": {
+    "title": "Everything you need for best in class service",
+    "breadcrumb": "pricing"
+  },
+  "pricing": {
+    "toggle": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "saveText": "Save 20%"
+    }
+  },
+  "faqs": {
+    "title": "Frequently asked questions",
+    "support": {
+      "text": "Didn't get your answer? Feel free to",
+      "link": "Contact Support"
+    }
+  },
+  "cta": {
+    "heading": "Have other questions?",
+    "subheading": "Feel free to reach our support team.",
+    "link": "Contact support"
+  },
+  "loading": "loading...",
+  "error": "Something went wrong with faqs data!"
+}
