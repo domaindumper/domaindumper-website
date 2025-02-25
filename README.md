@@ -56,7 +56,7 @@ Required environment variables:
 - `NEXT_PUBLIC_APP_URL`: Application URL
 - Add other required variables
 
-## 🗂️ Project Structure
+## 🗂️ Project Structure 
 
 ```
 domaindumper-website/
