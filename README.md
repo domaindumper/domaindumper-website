@@ -1,35 +1,111 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DomainDumper Website
 
+A private Next.js project for domain intelligence and TLD data management.
 
-## Getting Started
+## 🔒 Private Repository Notice
 
-First, run the development server:
+This repository contains proprietary code and is private. All rights reserved.
 
+## 🚀 Features
+
+- Domain data analytics and insights
+- TLD management and tracking
+- Multi-language support (English/Hindi)
+- Real-time domain availability checking
+- Secure authentication system
+- Responsive dashboard interface
+- Dynamic pricing plans
+- FAQ management system
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js
+- **Styling:** Bootstrap 5
+- **State Management:** React Hooks
+- **Data Fetching:** SWR
+- **Internationalization:** next-i18next
+- **Icons:** Material Symbols
+
+## 📦 Installation
+
+1. Clone the repository (requires access):
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/yourusername/domaindumper-website.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+cd domaindumper-website
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. Create `.env.local` file:
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+# Add other environment variables
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+4. Run development server:
+```bash
+npm run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 🌐 Environment Setup
 
-## Learn More
+Required environment variables:
+- `NEXT_PUBLIC_APP_URL`: Application URL
+- Add other required variables
 
-To learn more about Next.js, take a look at the following resources:
+## 🗂️ Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+domaindumper-website/
+├── components/           # Reusable components
+├── context/             # React context providers
+├── layouts/             # Page layouts
+├── pages/               # Next.js pages
+├── public/              
+│   └── locales/        # Translation files
+├── styles/             # Global styles
+└── utils/              # Utility functions
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🔄 Translation System
 
-## Deploy on Vercel
+- English (`/public/locales/en/`)
+- Hindi (`/public/locales/hi/`)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Each page has its dedicated translation namespace:
+- `common.json`: Shared translations
+- `auth.json`: Authentication related
+- `pricing.json`: Pricing page
+- `about.json`: About page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🔐 Security Considerations
+
+- Private API endpoints
+- Protected routes
+- Environment variable protection
+- API rate limiting
+
+## 🧪 Development Guidelines
+
+1. Create feature branches from `develop`
+2. Follow naming convention: `feature/feature-name`
+3. Add translations for new features
+4. Test both language versions
+5. Update documentation
+
+## ⚠️ Important Notes
+
+- Keep repository private
+- Don't share access credentials
+- Regular backup recommended
+- Follow security protocols
+
+## 📝 License
+
+Private. All rights reserved.
+
+---
+© 2024 DomainDumper. Confidential and Proprietary.
