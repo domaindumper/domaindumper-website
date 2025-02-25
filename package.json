@@ -17,7 +17,8 @@
     "postinstall": "husky",
     "type-check": "tsc --noEmit",
     "clean": "rimraf .next",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "export": "next export"
   },
   "dependencies": {
     "@babel/core": "^7.23.9",
