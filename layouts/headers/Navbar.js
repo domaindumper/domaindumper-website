@@ -134,6 +134,42 @@ const Navbar = () => {
             </Link>
           </div>
         </li>
+        <li className="nav-item dropdown">
+          <a
+            className={
+              router.pathname.startsWith("/support")
+                ? "nav-link dropdown-arrow active"
+                : "nav-link dropdown-arrow"
+            }
+            href="/DNS/"
+            data-bs-toggle="dropdown"
+          >
+            DNS
+            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
+              expand_more
+            </span>
+          </a>
+          <div className="dropdown-menu">
+            <Link
+              href="/support/open-support-ticket/"
+              className="dropdown-item"
+            >
+              DNS Records Lookup
+            </Link>
+            <Link href="/support/api-documents/" className="dropdown-item">
+            DNS Health Check
+            </Link>
+            <Link href="/support/knowledgebase/" className="dropdown-item">
+            Reverse DNS Lookup
+            </Link>
+            <Link href="/support/payment-methods" className="dropdown-item">
+            DNS Propagation Checker
+            </Link>
+            <Link href="/support/contact-us/" className="dropdown-item">
+            Nameserver History + Monitoring
+            </Link>
+          </div>
+        </li>
 
         <li className="nav-item">
           <Link href="/pricing/" className="nav-link">{t('nav.pricing')}</Link>
