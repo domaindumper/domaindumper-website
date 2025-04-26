@@ -159,7 +159,7 @@ const Navbar = () => {
             <Link href="/support/api-documents/" className="dropdown-item">
             DNS Health Check
             </Link>
-            <Link href="/support/knowledgebase/" className="dropdown-item">
+            <Link href="/suppor/knowledgebase/" className="dropdown-item">
             Reverse DNS Lookup
             </Link>
             <Link href="/support/payment-methods" className="dropdown-item">
