@@ -68,9 +68,10 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="col-lg-8 ps-lg-8 border-start-lg">
-                <h6 className="dropdown-header">{t('nav.domain.services')}</h6>
+                
                 <div className="row">
                   <div className="col-lg-6 mb-6 mb-lg-0">
+                  <h6 className="dropdown-header">{t('nav.domain.services')}</h6>
                     <Link className="dropdown-item" href="/domains/">{t('nav.domain.allRegistered')}</Link>
                     <Link className="dropdown-item" href="/domains/">{t('nav.domain.newlyRegistered')}</Link>
                     <Link className="dropdown-item" href="/domains/">{t('nav.domain.expiredDomains')}</Link>
