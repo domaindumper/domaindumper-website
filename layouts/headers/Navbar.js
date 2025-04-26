@@ -75,10 +75,13 @@ const Navbar = () => {
                     <Link className="dropdown-item" href="/domains/">{t('nav.domain.newlyRegistered')}</Link>
                     <Link className="dropdown-item" href="/domains/">{t('nav.domain.expiredDomains')}</Link>
                     <Link className="dropdown-item" href="/domains/">{t('nav.domain.deletedDomains')}</Link>
-                  </div>
-                  <div className="col-lg-6 mb-6 mb-lg-0">
                     <Link className="dropdown-item" href="/domains/">{t('nav.domain.checkAvailability')}</Link>
                     <Link className="dropdown-item" href="/domains/">{t('nav.domain.aiSuggestions')}</Link>
+                  </div>
+                  <div className="col-lg-6 mb-6 mb-lg-0">
+                  <h6 className="dropdown-header"> {t('nav.tlds.title')}</h6>
+                    <Link className="dropdown-item" href="/tlds/tlds-from-a-z/">{t('nav.tlds.fromAtoZ')}</Link>
+                    <Link className="dropdown-item" href="/tlds/tlds-categories/">{t('nav.tlds.categories')}</Link>
                   </div>
                 </div>
               </div>
@@ -110,19 +113,7 @@ const Navbar = () => {
             </Link>
           </div>
         </li>
-        <li className="nav-item dropdown">
-          <a className={router.pathname.startsWith("/tlds") ? "nav-link dropdown-arrow active" : "nav-link dropdown-arrow"}
-            href="/tlds/"
-            data-bs-toggle="dropdown"
-          >
-            {t('nav.tlds.title')}
-            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">expand_more</span>
-          </a>
-          <div className="dropdown-menu">
-            <Link href="/tlds/tlds-from-a-z/" className="dropdown-item">{t('nav.tlds.fromAtoZ')}</Link>
-            <Link href="/tlds/tlds-categories/" className="dropdown-item">{t('nav.tlds.categories')}</Link>
-          </div>
-        </li>
+        
 
         <li className="nav-item dropdown">
           <a
