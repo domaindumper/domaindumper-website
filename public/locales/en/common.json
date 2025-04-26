@@ -57,48 +57,61 @@
   },
   "nav": {
     "domain": {
-      "title": "Domain",
+      "title": "Domains",
       "overview": "Overview",
       "domainData": "Domain Data",
-      "features": "Full list of features",
-      "services": "Domain's All Services",
-      "allRegistered": "All registered domains",
-      "newlyRegistered": "Newly registered domains",
-      "expiredDomains": "Expired domains list",
-      "deletedDomains": "Deleted domains list",
-      "checkAvailability": "Check domain availability",
-      "aiSuggestions": "AI domain name suggestions"
+      "features": "All the features you need to monitor domains",
+      "services": "Domain Services",
+      "allRegistered": "All Registered Domains",
+      "newlyRegistered": "Newly Registered Domains",
+      "expiredDomains": "Expired Domains",
+      "deletedDomains": "Deleted Domains",
+      "checkAvailability": "Check Domain Availability",
+      "aiSuggestions": "AI Domain Suggestions"
+    },
+    "websiteData": {
+      "title": "Website Data",
+      "dailyUpdate": "Website Data Daily Update",
+      "allDomains": "Website Data All Domains"
     },
     "tlds": {
       "title": "TLDs",
-      "fromAtoZ": "TLDs From A-Z",
-      "categories": "TLDs Categories"
+      "fromAtoZ": "TLDs from A to Z",
+      "categories": "TLD Categories"
     },
     "registrars": {
       "title": "Registrars",
-      "allRegistrars": "All domains registrars",
+      "allRegistrars": "All Domain Registrars",
       "tldsOffered": "TLDs Offered",
-      "cheapestRegistration": "Cheapest domain registration",
+      "cheapestRegistration": "Cheapest Domain Registration",
       "bestValue": "Best 3 Year Value"
+    },
+    "dns": {
+      "title": "DNS",
+      "recordsLookup": "DNS Records Lookup",
+      "healthCheck": "DNS Health Check",
+      "reverseLookup": "Reverse DNS Lookup",
+      "propagationChecker": "DNS Propagation Checker",
+      "nameserverHistory": "Nameserver History + Monitoring"
     },
     "pricing": "Pricing",
     "about": {
       "title": "About",
       "getStart": "Get Started",
-      "domainDumper": "DomainDumper",
-      "whatWeDo": "What we do?"
+      "domainDumper": "About Domain Dumper",
+      "whatWeDo": "What We Do"
     },
     "support": {
       "title": "Support",
       "openTicket": "Open Support Ticket",
       "apiDocs": "API Documents",
       "knowledgebase": "Knowledgebase",
-      "paymentMethods": "Payment methods",
-      "contactUs": "Contact us"
+      "paymentMethods": "Payment Methods",
+      "contactUs": "Contact Us"
     },
     "account": {
       "title": "Account",
-      "greeting": "Hi, {{name}}!",
+      "greeting": "Hi, {{name}}",
       "dashboard": "Dashboard",
       "accountDetails": "Account Details",
       "emailHistory": "Email History",
@@ -106,7 +119,7 @@
       "logout": "Logout",
       "login": "Login",
       "register": "Register",
-      "forgotPassword": "Forgot password?"
+      "forgotPassword": "Forgot Password"
     }
   },
   "theme": {

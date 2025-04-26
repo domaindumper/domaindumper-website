@@ -110,6 +110,19 @@
       "login": "लॉग इन",
       "register": "रजिस्टर करें",
       "forgotPassword": "पासवर्ड भूल गए?"
+    },
+    "websiteData": {
+      "title": "वेबसाइट डेटा",
+      "dailyUpdate": "वेबसाइट डेटा दैनिक अपडेट",
+      "allDomains": "वेबसाइट डेटा सभी डोमेन"
+    },
+    "dns": {
+      "title": "डीएनएस",
+      "recordsLookup": "डीएनएस रिकॉर्ड लुकअप",
+      "healthCheck": "डीएनएस हेल्थ चेक",
+      "reverseLookup": "रिवर्स डीएनएस लुकअप",
+      "propagationChecker": "डीएनएस प्रोपेगेशन चेकर",
+      "nameserverHistory": "नेमसर्वर इतिहास + निगरानी"
     }
   },
   "theme": {

@@ -35,7 +35,12 @@ const Navbar = () => {
     <>
       <ul className="mx-auto navbar-nav">
         <li className="nav-item dropdown position-static">
-          <a className={router.pathname.startsWith("/features") ? "nav-link dropdown-arrow active" : "nav-link dropdown-arrow"}
+          <a 
+            className={
+              router.pathname.startsWith("/domains")
+                ? "nav-link dropdown-arrow active"
+                : "nav-link dropdown-arrow"
+            }
             href="/domains/"
             data-bs-toggle="dropdown"
           >
@@ -81,6 +86,30 @@ const Navbar = () => {
           </div>
         </li>
 
+        <li className="nav-item dropdown">
+          <a
+            className={
+              router.pathname.startsWith("/website-data")
+                ? "nav-link dropdown-arrow active"
+                : "nav-link dropdown-arrow"
+            }
+            href="/website-data/"
+            data-bs-toggle="dropdown"
+          >
+            {t('nav.websiteData.title')}
+            <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
+              expand_more
+            </span>
+          </a>
+          <div className="dropdown-menu">
+            <Link href="/website-data/daily-update/" className="dropdown-item">
+              {t('nav.websiteData.dailyUpdate')}
+            </Link>
+            <Link href="/website-data/all-domains/" className="dropdown-item">
+              {t('nav.websiteData.allDomains')}
+            </Link>
+          </div>
+        </li>
         <li className="nav-item dropdown">
           <a className={router.pathname.startsWith("/tlds") ? "nav-link dropdown-arrow active" : "nav-link dropdown-arrow"}
             href="/tlds/"
@@ -137,36 +166,33 @@ const Navbar = () => {
         <li className="nav-item dropdown">
           <a
             className={
-              router.pathname.startsWith("/support")
+              router.pathname.startsWith("/dns")
                 ? "nav-link dropdown-arrow active"
                 : "nav-link dropdown-arrow"
             }
-            href="/DNS/"
+            href="/dns/"
             data-bs-toggle="dropdown"
           >
-            DNS
+            {t('nav.dns.title')}
             <span className="material-symbols-sharp align-middle lh-1 dropdown-arrow-icon">
               expand_more
             </span>
           </a>
           <div className="dropdown-menu">
-            <Link
-              href="/support/open-support-ticket/"
-              className="dropdown-item"
-            >
+            <Link href="/dns/records-lookup/" className="dropdown-item">
               DNS Records Lookup
             </Link>
-            <Link href="/support/api-documents/" className="dropdown-item">
-            DNS Health Check
+            <Link href="/dns/health-check/" className="dropdown-item">
+              DNS Health Check
             </Link>
-            <Link href="/suppor/knowledgebase/" className="dropdown-item">
-            Reverse DNS Lookup
+            <Link href="/dns/reverse-lookup/" className="dropdown-item">
+              Reverse DNS Lookup
             </Link>
-            <Link href="/support/payment-methods" className="dropdown-item">
-            DNS Propagation Checker
+            <Link href="/dns/propagation-checker/" className="dropdown-item">
+              DNS Propagation Checker
             </Link>
-            <Link href="/support/contact-us/" className="dropdown-item">
-            Nameserver History + Monitoring
+            <Link href="/dns/nameserver-history/" className="dropdown-item">
+              Nameserver History + Monitoring
             </Link>
           </div>
         </li>
