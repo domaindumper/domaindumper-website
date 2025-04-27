@@ -329,3 +329,130 @@ code, pre, kbd, .font-mono {
   }
 }
 
+// Hero section gradients
+.bg-primary-gradient {
+  background: $hero-gradient;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $hero-gradient-overlay;
+    pointer-events: none;
+  }
+}
+
+[data-bs-theme="dark"] {
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, 
+      rgba(darken($primary, 15%), 0.95) 0%, 
+      rgba(darken($primary, 35%), 0.95) 100%
+    );
+
+    &::before {
+      background: linear-gradient(45deg, 
+        rgba($black, 0.4) 0%, 
+        rgba($black, 0.1) 100%
+      );
+    }
+  }
+}
+
+// Alternative gradients you can try
+.bg-primary-gradient-alt1 {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+}
+
+.bg-primary-gradient-alt2 {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+}
+
+// Add this new gradient background class
+.bg-gradient-light-white {
+  background: linear-gradient(180deg, #f8f9fa 0%, rgba(248, 249, 250, 0.5) 50%, rgba(255, 255, 255, 1) 100%);
+  
+  // Optional subtle pattern overlay
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+// Optional: Add hover effect for pricing cards
+.bg-gradient-light-white .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+  }
+}
+
+// Testimonial Carousel Styles
+.testimonial-carousel {
+  position: relative;
+  padding-bottom: 4rem !important;
+  
+  .swiper {
+    padding-bottom: 3rem;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--bs-primary);
+    
+    &:after {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .swiper-pagination {
+    bottom: 0 !important;
+  }
+  
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--bs-primary);
+    opacity: 0.3;
+    
+    &-active {
+      opacity: 1;
+    }
+  }
+
+  .swiper-slide {
+    height: auto; // Fix height issues
+  }
+
+  // Add some spacing between slides
+  .card {
+    margin: 0.5rem;
+    height: 100%;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  // Remove padding that was used for full width
+  &.px-4 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+

@@ -48,6 +48,17 @@ $teal:    #63e6be !default;
 $cyan:    #1bb3f7 !default;
 // scss-docs-end color-variables
 
+// Gradient Variables
+$gradient-primary-start: $blue !default;
+$gradient-primary-end: shade-color($blue, 20%) !default;
+$hero-gradient-overlay: linear-gradient(45deg, rgba($black, 0.2) 0%, rgba($black, 0) 100%) !default;
+
+// Hero Gradients
+$hero-gradient: linear-gradient(135deg, $gradient-primary-start 0%, $gradient-primary-end 100%) !default;
+
+// Update your existing variables
+$bg-primary-gradient: $hero-gradient !default;
+
 // scss-docs-start colors-map
 $colors: (
   "blue":       $blue,
@@ -1731,3 +1742,20 @@ $navbar-font-weight:$btn-font-weight!default;
 $navbar-link-text-transform:capitalize!default;
 $navbar-sticky-box-shadow:0px 11px 32px rgba($secondary,.03)!default;
 $dropdown-item-text-transform:$navbar-link-text-transform!default;
+
+// Then in your globals.scss, update the gradient class:
+.bg-primary-gradient {
+  background: var(--#{$prefix}bg-primary-gradient, $bg-primary-gradient);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $hero-gradient-overlay;
+    pointer-events: none;
+  }
+}

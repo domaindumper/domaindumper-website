@@ -54,6 +54,13 @@ $link-color-dark:                   tint-color($primary, 40%) !default;
 $link-hover-color-dark:             shift-color($link-color-dark, -$link-shade-percentage) !default;
 $code-color-dark:                   tint-color($code-color, 40%) !default;
 
+// Dark mode gradient colors
+$gradient-primary-start-dark: shade-color($primary, 15%) !default;
+$gradient-primary-end-dark: shade-color($primary, 35%) !default;
+
+// Dark mode hero gradients
+$hero-gradient-dark: linear-gradient(135deg, $gradient-primary-start-dark 0%, $gradient-primary-end-dark 100%) !default;
+$hero-gradient-overlay-dark: linear-gradient(45deg, rgba($black, 0.4) 0%, rgba($black, 0.1) 100%) !default;
 
 //
 // Forms
